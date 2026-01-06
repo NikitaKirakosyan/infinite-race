@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
 using Zenject;
 
 namespace Southbyte.RaceSystem
 {
-    public class PlayerSpawner : MonoBehaviour
+    public class CarSpawner : MonoBehaviour
     {
+        public event Action<CarController> OnCarSpawned;
+        
         public CarConfig startCar;
         public CameraController cameraController;
-        private GameObject currentCar;
+        private CarController currentCar;
         
         [Inject] private IInstantiator _instantiator;
         
@@ -23,8 +26,9 @@ namespace Southbyte.RaceSystem
             if (currentCar != null)
                 Destroy(currentCar);
             
-            currentCar = _instantiator.InstantiatePrefab(config.prefab, transform.position, Quaternion.identity, null);
+            currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, transform.position, Quaternion.identity, null);
             cameraController.SetTarget(currentCar.transform);
+            OnCarSpawned?.Invoke(currentCar);
         }
     }
 }

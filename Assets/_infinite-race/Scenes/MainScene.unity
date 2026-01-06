@@ -1503,6 +1503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.LevelGenerationSystem.LevelGenerator
   player: {fileID: 1014270209}
+  carSpawner: {fileID: 1014270213}
   _container: {fileID: 1281770531}
   roadTiles:
   - {fileID: 340707555252352917, guid: 250c728e3548d4e77ab706c86f5db0e6, type: 3}
@@ -1685,8 +1686,9 @@ MonoBehaviour:
   - {fileID: 3148865166297203229, guid: 092123eb3167c4d4c8d9e4a64037859e, type: 3}
   - {fileID: 9004981528941783965, guid: a3967e2cc9dda3d46a7f39440056c361, type: 3}
   - {fileID: 4394957070484452981, guid: 9b5ac8f19d4ecf943b4b8775c0da46b0, type: 3}
-  spawnDistance: 0
-  spawnInterval: 1.2
+  carSpawner: {fileID: 1014270213}
+  spawnDistance: 100
+  spawnInterval: 0.5
   laneOffset: 10
   lanes: 2
 --- !u!4 &2064355987

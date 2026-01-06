@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Southbyte.RaceSystem
 {
@@ -6,6 +8,7 @@ namespace Southbyte.RaceSystem
     {
         public Transform player;
         public GameObject[] trafficPrefabs;
+        public CarSpawner carSpawner;
         
         public float spawnDistance = 120f;
         public float spawnInterval = 1.2f;
@@ -14,6 +17,12 @@ namespace Southbyte.RaceSystem
         public int lanes = 3;
         
         private float timer;
+        
+        
+        private void Awake()
+        {
+            carSpawner.OnCarSpawned += (car) => player = car.transform;
+        }
         
         void Update()
         {

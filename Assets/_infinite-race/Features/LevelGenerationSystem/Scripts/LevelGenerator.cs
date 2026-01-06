@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Southbyte.RaceSystem;
 
 namespace Southbyte.LevelGenerationSystem
 {
     public class LevelGenerator : MonoBehaviour
     {
         public Transform player;
+        public CarSpawner carSpawner;
         [SerializeField] private Transform _container;
         public GameObject[] roadTiles;
         public float tileLength = 40f;
@@ -14,6 +16,11 @@ namespace Southbyte.LevelGenerationSystem
         private float spawnZ = 0f;
         private Queue<GameObject> spawned = new Queue<GameObject>();
         
+        
+        private void Awake()
+        {
+            carSpawner.OnCarSpawned += (car) => player = car.transform;
+        }
         
         void Start()
         {
