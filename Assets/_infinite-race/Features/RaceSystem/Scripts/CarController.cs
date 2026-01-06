@@ -1,9 +1,8 @@
-using System;
 using HandyEditorExtensions;
 using UnityEngine;
 using Zenject;
 
-namespace Southbyte
+namespace Southbyte.RaceSystem
 {
     public class CarController : MonoBehaviour
     {
@@ -16,13 +15,17 @@ namespace Southbyte
         [SerializeField] private GameObject _headlights;
         
         [Inject] private GameManager _gameManager;
+        [Inject] private ScoreManager _scoreManager;
         
         private float _currentSpeed;
+        
+        public CarConfig config;
         
         
         private void Awake()
         {
             _headlights.SetActive(false);
+            ApplyConfig();
         }
         
         private void Update()
@@ -69,6 +72,18 @@ namespace Southbyte
         {
             _currentSpeed = _minSpeed;
             _headlights.SetActive(true);
+        }
+        
+        [Button]
+        public void ApplyConfig()
+        {
+            _maxSpeed = config.maxSpeed;
+            _acceleration = config.acceleration;
+            _deceleration = config.deceleration;
+            _steerSpeed = config.steerSpeed;
+            _laneLimit = config.laneLimit;
+            
+            _scoreManager.SetMultiplier(config.scoreMultiplier);
         }
     }
 }

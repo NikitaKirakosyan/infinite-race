@@ -18,5 +18,6 @@ namespace Southbyte
         public const string WaveSpawnSystemRoot = Root + "Wave Spawn System/";
         public const string BuildingSystemRoot = Root + "Building System/";
         public const string EnemiesSystemRoot = Root + "Enemies System/";
+        public const string RaceSystemRoot = Root + "Race System/";
     }
 }

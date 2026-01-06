@@ -1,20 +1,21 @@
+using Southbyte.DIConfiguration;
 using UnityEngine;
 
 namespace Southbyte
 {
-    public class ScoreManager : MonoBehaviour
+    [EarlyInitialization]
+    public class ScoreManager
     {
         public Transform player;
         public float scoreMultiplier = 1f;
         
-        public float Distance { get; private set; }
-        public int Score { get; private set; }
+        public float Distance => player.position.z;
+        public int Score => Mathf.FloorToInt(Distance * scoreMultiplier);
         
         
-        private void Update()
+        public void SetMultiplier(float multiplier)
         {
-            Distance = player.position.z;
-            Score = Mathf.FloorToInt(Distance * scoreMultiplier);
+            scoreMultiplier = multiplier;
         }
     }
 }

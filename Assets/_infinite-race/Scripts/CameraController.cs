@@ -24,5 +24,11 @@ namespace Southbyte
             var targetPosition = _target.position - _offsetPosition;
             transform.position = targetPosition;
         }
+        
+        
+        public void SetTarget(Transform target)
+        {
+            _target = target;
+        }
     }
 }
