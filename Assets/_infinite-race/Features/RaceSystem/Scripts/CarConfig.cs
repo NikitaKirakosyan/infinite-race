@@ -9,6 +9,7 @@ namespace Southbyte.RaceSystem
         public GameObject prefab;
         
         [Header("Stats")]
+        public float minSpeed = 40f;
         public float maxSpeed = 40f;
         public float acceleration = 15f;
         public float deceleration = 25f;

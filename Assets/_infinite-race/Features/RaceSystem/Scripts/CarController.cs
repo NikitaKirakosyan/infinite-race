@@ -6,7 +6,7 @@ namespace Southbyte.RaceSystem
 {
     public class CarController : MonoBehaviour
     {
-        [SerializeField] private float _minSpeed = 10;
+        [SerializeField] private float _minSpeed = 50;
         [SerializeField] private float _maxSpeed = 70;
         [SerializeField] private float _acceleration = 15;
         [SerializeField] private float _deceleration = 25;
@@ -23,11 +23,6 @@ namespace Southbyte.RaceSystem
         
         public CarConfig config;
         
-        
-        private void Awake()
-        {
-            ApplyConfig();
-        }
         
         private void Update()
         {
@@ -71,6 +66,7 @@ namespace Southbyte.RaceSystem
         [Button]
         public void StartEngine()
         {
+            ApplyConfig();
             _currentSpeed = _minSpeed;
             _headlights.SetActive(true);
         }
@@ -78,6 +74,7 @@ namespace Southbyte.RaceSystem
         [Button]
         public void ApplyConfig()
         {
+            _minSpeed = config.minSpeed;
             _maxSpeed = config.maxSpeed;
             _acceleration = config.acceleration;
             _deceleration = config.deceleration;

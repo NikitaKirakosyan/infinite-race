@@ -8,7 +8,7 @@ namespace Southbyte.RaceSystem
     {
         public event Action<CarController> OnCarSpawned;
         
-        public CarConfig startCar;
+        public CarConfig[] carConfigs;
         public CameraController cameraController;
         private CarController currentCar;
         
@@ -17,16 +17,22 @@ namespace Southbyte.RaceSystem
         
         void Start()
         {
-            Spawn(startCar);
+            Spawn();
         }
         
         
-        public void Spawn(CarConfig config)
+        public void Spawn()
         {
-            if (currentCar != null)
-                Destroy(currentCar);
+            var config = carConfigs.GetRandomElement();
+            var position = transform.position;
             
-            currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, transform.position, Quaternion.identity, null);
+            if (currentCar != null)
+            {
+                position = currentCar.transform.position;
+                Destroy(currentCar.gameObject);
+            }
+            
+            currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, position, Quaternion.identity, null);
             cameraController.SetTarget(currentCar.transform);
             OnCarSpawned?.Invoke(currentCar);
         }
