@@ -1,6 +1,5 @@
 using ModestTree;
 using Southbyte.AudioSystem;
-using Southbyte.BuildingSystem;
 using Southbyte.ScreensSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,8 +15,6 @@ namespace Southbyte.DIConfiguration
         [SerializeField] private UILayers _uiLayers;
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private UpdateManager _updateManager;
-        [SerializeField] private BuildingCardsContainerController _buildingCardsContainerController;
-        [SerializeField] private BuildSlotsController _buildSlotsController;
 
 
         public override void InstallBindings()
@@ -29,8 +26,6 @@ namespace Southbyte.DIConfiguration
             Container.BindInstance(_uiLayers).AsSingle().NonLazy();
             Container.BindInstance(_audioManager).AsSingle().NonLazy();
             Container.BindInstance(_updateManager).AsSingle().Lazy();
-            Container.BindInstance(_buildingCardsContainerController).AsSingle().Lazy();
-            Container.BindInstance(_buildSlotsController).AsSingle().Lazy();
             
             var types = typeof(MainSceneInstaller).Assembly.GetTypes();
             foreach (var type in types)

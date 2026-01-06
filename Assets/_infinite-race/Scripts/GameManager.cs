@@ -1,4 +1,3 @@
-using Southbyte.BuildingSystem;
 using Southbyte.CurrenciesSystem;
 using UnityEngine;
 using YG;
@@ -8,8 +7,6 @@ namespace Southbyte
 {
     public class GameManager : MonoBehaviour
     {
-        [Inject] private BuildingCardsContainerController _buildingCardsContainerController;
-        [Inject] private BuildingManager _buildingManager;
         [Inject] private CurrenciesManager _currenciesManager;
         
         
@@ -22,7 +19,6 @@ namespace Southbyte
         
         public void Play()
         {
-            _buildingCardsContainerController.Setup(_buildingManager.AllBuildingSettings);
             _currenciesManager.SetCurrency(CurrencyType.Money, 100);
         }
     }
