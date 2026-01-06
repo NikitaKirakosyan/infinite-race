@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PoliceCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   prefab: {fileID: 4648795177379545177, guid: 9122f207b9dfac647adcb64c66cfec58, type: 3}
-  maxSpeed: 40
+  maxSpeed: 80
   acceleration: 15
   deceleration: 25
   steerSpeed: 6
   laneLimit: 6
-  scoreMultiplier: 1.5
+  scoreMultiplier: 1.75

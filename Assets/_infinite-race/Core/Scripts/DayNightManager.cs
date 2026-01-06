@@ -1,4 +1,3 @@
-using System;
 using HandyEditorExtensions;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace Southbyte
         public Color nightAmbient;
         
         private Material _daySkybox;
-        private bool _isNight;
+        private bool _isNight = true;
         
         
         private void Awake()

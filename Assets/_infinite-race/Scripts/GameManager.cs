@@ -1,4 +1,5 @@
 using Southbyte.CurrenciesSystem;
+using Southbyte.RaceSystem;
 using UnityEngine;
 using YG;
 using Zenject;
@@ -19,7 +20,7 @@ namespace Southbyte
         
         public void Play()
         {
-            
+            FindFirstObjectByType<CarController>().StartEngine();
         }
         
         public void GameOver()
