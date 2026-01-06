@@ -19,7 +19,12 @@ namespace Southbyte
         
         public void Play()
         {
-            _currenciesManager.SetCurrency(CurrencyType.Money, 100);
+            
+        }
+        
+        public void GameOver()
+        {
+            
         }
     }
 }
