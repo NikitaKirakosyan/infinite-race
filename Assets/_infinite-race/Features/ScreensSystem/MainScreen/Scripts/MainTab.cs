@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Southbyte.ScreensSystem
 {
-    public class FightTab : ScreenTabBase
+    public class MainTab : ScreenTabBase
     {
         [SerializeField] private Button _playButton;
         
