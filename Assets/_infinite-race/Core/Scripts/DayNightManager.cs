@@ -5,12 +5,14 @@ namespace Southbyte
 {
     public class DayNightManager : MonoBehaviour
     {
+        [SerializeField] private Camera _camera;
+        
         public Light directionalLight;
         public Color dayAmbient;
         public Color nightAmbient;
         
         private Material _daySkybox;
-        private bool _isNight = true;
+        private bool _isNight;
         
         
         private void Awake()
@@ -41,8 +43,8 @@ namespace Southbyte
             directionalLight.intensity = 0.05f;
             directionalLight.color = nightAmbient;
             
-            Camera.main.clearFlags = CameraClearFlags.SolidColor;
-            Camera.main.backgroundColor = Color.black;
+            _camera.clearFlags = CameraClearFlags.SolidColor;
+            _camera.backgroundColor = Color.black;
         }
         
         void ApplyDay()
@@ -63,7 +65,7 @@ namespace Southbyte
             directionalLight.color = dayAmbient;
             
             // Camera
-            Camera.main.clearFlags = CameraClearFlags.Skybox;
+            _camera.clearFlags = CameraClearFlags.Skybox;
         }
 
         

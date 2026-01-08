@@ -5,7 +5,7 @@ namespace Southbyte.RaceSystem
     [CreateAssetMenu(fileName = nameof(CarConfig), menuName = EditorMenuNames.RaceSystemRoot + "Car Config")]
     public class CarConfig : ScriptableObject
     {
-        [Header("Visual")]
+        public string carId;
         public GameObject prefab;
         
         [Header("Stats")]

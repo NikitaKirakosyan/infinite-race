@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34608c3b85df4e2c8dae17f9032734c, type: 3}
   m_Name: CabrioCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
+  carId: cabrio_car
   prefab: {fileID: 7654369706139800605, guid: 739dce61952b5624d9b547ee31f850f7, type: 3}
+  minSpeed: 40
   maxSpeed: 150
   acceleration: 30
   deceleration: 50

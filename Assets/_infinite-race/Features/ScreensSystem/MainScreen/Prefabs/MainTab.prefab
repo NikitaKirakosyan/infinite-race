@@ -55,6 +55,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.ScreensSystem.FightTab
   _playButton: {fileID: 3853188944906420605}
+  _previousCarButton: {fileID: 6170359849049137623}
+  _nextCarButton: {fileID: 2706530845277808476}
 --- !u!1 &2094774036272768093
 GameObject:
   m_ObjectHideFlags: 0

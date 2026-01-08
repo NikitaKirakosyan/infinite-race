@@ -1,7 +1,6 @@
 using Southbyte.DIConfiguration;
 using Southbyte.RaceSystem;
 using UnityEngine;
-using Zenject;
 
 namespace Southbyte
 {
@@ -11,7 +10,7 @@ namespace Southbyte
         public CarController player => Object.FindFirstObjectByType<CarController>();
         public float scoreMultiplier = 1f;
         
-        public float Distance => player.transform.position.z;
+        public float Distance => player ? player.transform.position.z : 0;
         public int Score => Mathf.FloorToInt(Distance * scoreMultiplier);
         
         

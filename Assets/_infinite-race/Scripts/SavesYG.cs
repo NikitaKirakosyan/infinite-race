@@ -10,5 +10,6 @@ namespace YG
         public string lastReleaseVersionViewed;
         public List<SerializablePair<CurrencyType, int>> currencies = new ();
         public StoreSaveData storeSaveData = new ();
+        public string selectedCarId;
     }
 }

@@ -1,4 +1,4 @@
-using HandyEditorExtensions;
+
 using UnityEngine;
 using Zenject;
 
@@ -18,14 +18,24 @@ namespace Southbyte.RaceSystem
         [Inject] private ScoreManager _scoreManager;
         
         private float _currentSpeed;
+        private bool _isEngineStarted;
         
         public float CurrentSpeed => _currentSpeed * 4;
         
         public CarConfig config;
         
         
+        private void Awake()
+        {
+            _gameManager.OnGameStarted += StartEngine;
+            _gameManager.OnGameOver += StopEngine;
+        }
+        
         private void Update()
         {
+            if(!_isEngineStarted)
+                return;
+            
             // Speed
             if (Input.GetKey(KeyCode.W))
                 _currentSpeed += _acceleration * Time.deltaTime;
@@ -63,16 +73,23 @@ namespace Southbyte.RaceSystem
         }
         
         
-        [Button]
         public void StartEngine()
         {
+            _isEngineStarted = true;
             ApplyConfig();
             _currentSpeed = _minSpeed;
             _headlights.SetActive(true);
         }
         
-        [Button]
-        public void ApplyConfig()
+        public void StopEngine()
+        {
+            _isEngineStarted = false;
+            _currentSpeed = 0;
+            _headlights.SetActive(false);
+        }
+        
+        
+        private void ApplyConfig()
         {
             _minSpeed = config.minSpeed;
             _maxSpeed = config.maxSpeed;

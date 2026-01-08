@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34608c3b85df4e2c8dae17f9032734c, type: 3}
   m_Name: PickupCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
+  carId: pickup_car
   prefab: {fileID: 8018424140572277383, guid: 88c873a865ebab3459fe926b71eab9b1, type: 3}
+  minSpeed: 40
   maxSpeed: 50
   acceleration: 15
   deceleration: 25

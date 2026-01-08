@@ -1,5 +1,5 @@
+using System;
 using Southbyte.CurrenciesSystem;
-using Southbyte.RaceSystem;
 using UnityEngine;
 using YG;
 using Zenject;
@@ -8,6 +8,9 @@ namespace Southbyte
 {
     public class GameManager : MonoBehaviour
     {
+        public event Action OnGameStarted;
+        public event Action OnGameOver;
+        
         [Inject] private CurrenciesManager _currenciesManager;
         
         
@@ -20,12 +23,12 @@ namespace Southbyte
         
         public void Play()
         {
-            FindFirstObjectByType<CarController>().StartEngine();
+            OnGameStarted?.Invoke();
         }
         
         public void GameOver()
         {
-            
+            OnGameOver?.Invoke();
         }
     }
 }

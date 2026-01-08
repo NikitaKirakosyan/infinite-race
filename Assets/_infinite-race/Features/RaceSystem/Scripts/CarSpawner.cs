@@ -15,12 +15,6 @@ namespace Southbyte.RaceSystem
         [Inject] private IInstantiator _instantiator;
         
         
-        void Start()
-        {
-            Spawn();
-        }
-        
-        
         public void Spawn()
         {
             var config = carConfigs.GetRandomElement();
