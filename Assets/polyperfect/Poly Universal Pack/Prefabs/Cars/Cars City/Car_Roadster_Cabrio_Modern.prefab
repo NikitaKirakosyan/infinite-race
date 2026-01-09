@@ -1121,7 +1121,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1144,6 +1144,7 @@ MonoBehaviour:
   _steerSpeed: 6
   _laneLimit: 4
   _headlights: {fileID: 2029642740570566506}
+  _isEngineStarted: 0
   config: {fileID: 11400000, guid: 1a75c553d256b46ba80ed56437f84cb9, type: 2}
 --- !u!1 &7068486951366307513
 GameObject:

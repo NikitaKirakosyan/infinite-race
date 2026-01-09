@@ -10,8 +10,8 @@ namespace Southbyte.RaceSystem
         
         private void Awake()
         {
-            _gameManager.OnGameStarted += Show;
-            _gameManager.OnGameOver += Hide;
+            _gameManager.OnGameStarted += Hide;
+            _gameManager.OnGameOver += Show;
         }
         
         

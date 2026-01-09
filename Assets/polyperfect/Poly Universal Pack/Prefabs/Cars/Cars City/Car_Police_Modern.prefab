@@ -853,6 +853,7 @@ MonoBehaviour:
   _steerSpeed: 6
   _laneLimit: 6
   _headlights: {fileID: 4293069797581642535}
+  _isEngineStarted: 0
   config: {fileID: 11400000, guid: d6296760d33854a84b84be9380119b44, type: 2}
 --- !u!65 &9168857969771644638
 BoxCollider:
@@ -898,7 +899,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

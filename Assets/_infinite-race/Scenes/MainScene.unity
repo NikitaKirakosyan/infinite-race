@@ -2545,6 +2545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b79bc76b3bd5d40ae836465742d7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.GameManager
+  _mainCamera: {fileID: 517302956}
 --- !u!4 &875523481
 Transform:
   m_ObjectHideFlags: 0
@@ -5348,9 +5349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2322c29801f194f51a89520b4e3760de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.DayNightManager
-  _cameras:
-  - {fileID: 517302956}
-  - {fileID: 757159307}
+  _cameras: []
   directionalLight: {fileID: 705507994}
   dayAmbient: {r: 1, g: 0.9923079, b: 0.85, a: 1}
   nightAmbient: {r: 0.16862746, g: 0.20179963, b: 0.36862746, a: 1}

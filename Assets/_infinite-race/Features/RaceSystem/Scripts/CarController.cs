@@ -18,7 +18,7 @@ namespace Southbyte.RaceSystem
         [Inject] private ScoreManager _scoreManager;
         
         private float _currentSpeed;
-        private bool _isEngineStarted;
+        [SerializeField] private bool _isEngineStarted;
         
         public float CurrentSpeed => _currentSpeed * 4;
         
@@ -30,6 +30,9 @@ namespace Southbyte.RaceSystem
             _gameManager.OnGameStarted += StartEngine;
             _gameManager.OnGameOver += StopEngine;
             SetHeadlightsActive(false);
+            
+            if(_gameManager.IsPlaying)
+                StartEngine();
         }
         
         private void Update()
@@ -71,6 +74,7 @@ namespace Southbyte.RaceSystem
         private void OnCollisionEnter(Collision other)
         {
             _gameManager.GameOver();
+            Destroy(gameObject);
         }
         
         

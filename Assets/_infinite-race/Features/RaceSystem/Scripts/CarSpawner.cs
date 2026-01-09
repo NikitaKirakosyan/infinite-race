@@ -1,4 +1,5 @@
 using System;
+using Southbyte.ScreensSystem;
 using UnityEngine;
 using Zenject;
 
@@ -8,16 +9,23 @@ namespace Southbyte.RaceSystem
     {
         public event Action<CarController> OnCarSpawned;
         
-        public CarConfig[] carConfigs;
         public CameraController cameraController;
         private CarController currentCar;
         
         [Inject] private IInstantiator _instantiator;
+        [Inject] private GameManager _gameManager;
+        [Inject] private CarConfigsManager _carConfigsManager;
+        
+        
+        private void Awake()
+        {
+            _gameManager.OnGameStarted += Spawn;
+        }
         
         
         public void Spawn()
         {
-            var config = carConfigs.GetRandomElement();
+            var config = _carConfigsManager.CarConfigs[MainTab.SelectedCarIndex];
             var position = transform.position;
             
             if (currentCar != null)

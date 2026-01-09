@@ -18,7 +18,7 @@ namespace Southbyte.ScreensSystem
         [Inject] private GameManager _gameManager;
         [Inject] private CarConfigsManager _carConfigsManager;
         
-        private int _selectedCarIndex;
+        public static int SelectedCarIndex;
         
         
         private void Awake()
@@ -32,7 +32,7 @@ namespace Southbyte.ScreensSystem
                 var carConfig = _carConfigsManager.CarConfigs[i];
                 if(carConfig.carId == YG2.saves.selectedCarId)
                 {
-                    _selectedCarIndex = i;
+                    SelectedCarIndex = i;
                     break;
                 }
             }
@@ -40,9 +40,22 @@ namespace Southbyte.ScreensSystem
         
         private void Start()
         {
-            OnCarIndexChanged?.Invoke(_selectedCarIndex);
+            OnCarIndexChanged?.Invoke(SelectedCarIndex);
         }
         
+        
+        private void SelectCar()
+        {
+            for(var i = 0; i < _carConfigsManager.CarConfigs.Count; i++)
+            {
+                var carConfig = _carConfigsManager.CarConfigs[i];
+                if(SelectedCarIndex == i)
+                {
+                    YG2.saves.selectedCarId = carConfig.carId;
+                    break;
+                }
+            }
+        }
         
         private void OnPlayButtonClick()
         {
@@ -52,20 +65,22 @@ namespace Southbyte.ScreensSystem
         
         private void PreviousCar()
         {
-            _selectedCarIndex--;
-            if(_selectedCarIndex < 0)
-                _selectedCarIndex = _carConfigsManager.CarConfigs.Count - 1;
+            SelectedCarIndex--;
+            if(SelectedCarIndex < 0)
+                SelectedCarIndex = _carConfigsManager.CarConfigs.Count - 1;
             
-            OnCarIndexChanged?.Invoke(_selectedCarIndex);
+            SelectCar();
+            OnCarIndexChanged?.Invoke(SelectedCarIndex);
         }
         
         private void NextCar()
         {
-            _selectedCarIndex++;
-            if(_selectedCarIndex >= _carConfigsManager.CarConfigs.Count)
-                _selectedCarIndex = 0;
+            SelectedCarIndex++;
+            if(SelectedCarIndex >= _carConfigsManager.CarConfigs.Count)
+                SelectedCarIndex = 0;
             
-            OnCarIndexChanged?.Invoke(_selectedCarIndex);
+            SelectCar();
+            OnCarIndexChanged?.Invoke(SelectedCarIndex);
         }
     }
 }
