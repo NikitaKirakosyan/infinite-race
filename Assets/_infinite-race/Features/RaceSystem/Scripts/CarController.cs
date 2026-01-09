@@ -29,6 +29,7 @@ namespace Southbyte.RaceSystem
         {
             _gameManager.OnGameStarted += StartEngine;
             _gameManager.OnGameOver += StopEngine;
+            SetHeadlightsActive(false);
         }
         
         private void Update()
@@ -78,14 +79,19 @@ namespace Southbyte.RaceSystem
             _isEngineStarted = true;
             ApplyConfig();
             _currentSpeed = _minSpeed;
-            _headlights.SetActive(true);
+            SetHeadlightsActive(true);
         }
         
         public void StopEngine()
         {
             _isEngineStarted = false;
             _currentSpeed = 0;
-            _headlights.SetActive(false);
+            SetHeadlightsActive(false);
+        }
+        
+        public void SetHeadlightsActive(bool value)
+        {
+            _headlights.SetActive(value);
         }
         
         

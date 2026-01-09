@@ -15,6 +15,7 @@ namespace Southbyte.DIConfiguration
         [SerializeField] private UILayers _uiLayers;
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private UpdateManager _updateManager;
+        [SerializeField] private DayNightManager _dayNightManager;
 
 
         public override void InstallBindings()
@@ -26,6 +27,7 @@ namespace Southbyte.DIConfiguration
             Container.BindInstance(_uiLayers).AsSingle().NonLazy();
             Container.BindInstance(_audioManager).AsSingle().NonLazy();
             Container.BindInstance(_updateManager).AsSingle().Lazy();
+            Container.BindInstance(_dayNightManager).AsSingle().NonLazy();
             
             var types = typeof(MainSceneInstaller).Assembly.GetTypes();
             foreach (var type in types)
