@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -33,6 +34,12 @@ namespace Southbyte.RaceSystem
             
             if(_gameManager.IsPlaying)
                 StartEngine();
+        }
+        
+        private void OnDestroy()
+        {
+            _gameManager.OnGameStarted -= StartEngine;
+            _gameManager.OnGameOver -= StopEngine;
         }
         
         private void Update()

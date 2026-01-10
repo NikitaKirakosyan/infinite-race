@@ -1,5 +1,7 @@
 using System;
 using Southbyte.CurrenciesSystem;
+using Southbyte.DIConfiguration;
+using Southbyte.ScreensSystem;
 using UnityEngine;
 using YG;
 using Zenject;
@@ -14,6 +16,8 @@ namespace Southbyte
         [SerializeField] private Camera _mainCamera;
         
         [Inject] private CurrenciesManager _currenciesManager;
+        
+        private ScreenManager _screenManager;
         
         public bool IsPlaying { get; private set; }
         
@@ -30,8 +34,16 @@ namespace Southbyte
         }
         
         
+        public void InitAfterLoad(ScreenManager screenManager)
+        {
+            _screenManager = screenManager;
+        }
+        
         public void Play()
         {
+            if(_screenManager.TryGetScreen<EndScreen>(ScreenIds.EndScreen, out var screen))
+                screen.Close();
+            
             _mainCamera.gameObject.SetActive(true);
             IsPlaying = true;
             OnGameStarted?.Invoke();
@@ -40,6 +52,7 @@ namespace Southbyte
         
         public void GameOver()
         {
+            _screenManager.Open<EndScreen>(ScreenIds.EndScreen);
             IsPlaying = false;
             OnGameOver?.Invoke();
             YG2.SaveProgress();

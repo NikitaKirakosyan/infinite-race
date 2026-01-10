@@ -284,6 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2375882466437060775}
   - component: {fileID: 1564322195146041688}
+  - component: {fileID: 6691748640286828396}
   m_Layer: 0
   m_Name: Car_Ambulance_Modern
   m_TagString: Untagged
@@ -339,6 +340,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5, y: 1, z: 5}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6691748640286828396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148865166297203229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee808f7d9af3a4bbabd52a3826829662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.TrafficCar
+  speed: 15
+  isOncoming: 0
 --- !u!1 &5427221397187895639
 GameObject:
   m_ObjectHideFlags: 0

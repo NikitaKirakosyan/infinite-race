@@ -237,7 +237,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1312274143627323554}
   - component: {fileID: -2764209259735946192}
-  - component: {fileID: -7758556709672480698}
   m_Layer: 0
   m_Name: Car_Modern
   m_TagString: Untagged
@@ -292,20 +291,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 3}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &-7758556709672480698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836891185728614936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee808f7d9af3a4bbabd52a3826829662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.TrafficCar
-  speed: 0
-  isOncoming: 0
 --- !u!1 &2518588688964855579
 GameObject:
   m_ObjectHideFlags: 0

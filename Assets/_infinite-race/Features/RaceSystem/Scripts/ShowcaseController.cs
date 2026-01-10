@@ -11,16 +11,15 @@ namespace Southbyte.RaceSystem
         private void Awake()
         {
             _gameManager.OnGameStarted += Hide;
-            _gameManager.OnGameOver += Show;
         }
         
         
-        private void Show()
+        public void Show()
         {
             gameObject.SetActive(true);
         }
         
-        private void Hide()
+        public void Hide()
         {
             gameObject.SetActive(false);
         }

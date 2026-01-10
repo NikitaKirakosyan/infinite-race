@@ -5,17 +5,17 @@ namespace Southbyte.RaceSystem
 {
     public class TrafficCar : MonoBehaviour
     {
-        public float speed;
-        public bool isOncoming;
+        public float Speed { get; set; }
+        public bool IsOncoming { get; set; }
         
         private void Start()
         {
-            transform.localEulerAngles = new Vector3(0, isOncoming ? 180 : 0, 0);
+            transform.localEulerAngles = new Vector3(0, IsOncoming ? 180 : 0, 0);
         }
         
         void Update()
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * Speed * Time.deltaTime);
         }
     }
 }

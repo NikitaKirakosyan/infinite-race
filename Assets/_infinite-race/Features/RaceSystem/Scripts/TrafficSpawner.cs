@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -10,7 +11,7 @@ namespace Southbyte.RaceSystem
         [Inject] private GameManager _gameManager;
         
         public Transform player;
-        public GameObject[] trafficPrefabs;
+        public TrafficCar[] trafficPrefabs;
         public CarSpawner carSpawner;
         
         public float spawnDistance = 120f;
@@ -19,6 +20,8 @@ namespace Southbyte.RaceSystem
         public float laneOffset = 2.5f;
         public int lanes = 3;
         
+        private List<TrafficCar> _spawnedCars = new ();
+        
         
         private void Awake()
         {
@@ -26,6 +29,15 @@ namespace Southbyte.RaceSystem
             _gameManager.OnGameOver += StopSpawning;
             
             carSpawner.OnCarSpawned += (car) => player = car.transform;
+        }
+        
+        
+        public void CleanTraffic()
+        {
+            foreach(var spawnedCar in _spawnedCars)
+                Destroy(spawnedCar.gameObject);
+            
+            _spawnedCars.Clear();
         }
         
         
@@ -53,8 +65,9 @@ namespace Southbyte.RaceSystem
             var car = Instantiate(trafficPrefabs[Random.Range(0, trafficPrefabs.Length)], pos, Quaternion.identity);
             
             var tc = car.GetComponent<TrafficCar>();
-            tc.isOncoming = oncoming;
-            tc.speed = Random.Range(8f, 14f);
+            tc.IsOncoming = oncoming;
+            tc.Speed = Random.Range(8f, 14f);
+            _spawnedCars.Add(tc);
         }
         
         private IEnumerator SpawnTrafficRoutine()
@@ -68,6 +81,7 @@ namespace Southbyte.RaceSystem
         
         private void StartSpawning()
         {
+            CleanTraffic();
             StartCoroutine(SpawnTrafficRoutine());
         }
         

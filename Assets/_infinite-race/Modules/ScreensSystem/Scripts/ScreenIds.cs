@@ -5,7 +5,7 @@ namespace Southbyte.ScreensSystem
         //Screens
         public const string InitialScreen = nameof(InitialScreen);
         public const string MainScreen = nameof(MainScreen);
-        public const string InventoryScreen = nameof(InventoryScreen);
+        public const string EndScreen = nameof(EndScreen);
         
         //Popups
         public const string AuthorizationPopup = nameof(AuthorizationPopup);

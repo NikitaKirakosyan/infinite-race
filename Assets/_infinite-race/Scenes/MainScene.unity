@@ -18,8 +18,8 @@ RenderSettings:
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.05
-  m_LinearFogStart: 20
-  m_LinearFogEnd: 50.01
+  m_LinearFogStart: 50
+  m_LinearFogEnd: 100
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -855,6 +855,9 @@ MonoBehaviour:
   _audioManager: {fileID: 62354836}
   _updateManager: {fileID: 1405306991}
   _dayNightManager: {fileID: 1962293215}
+  _levelGenerator: {fileID: 1989584997}
+  _showcaseController: {fileID: 335163254}
+  _trafficSpawner: {fileID: 2064355986}
 --- !u!114 &295154759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,10 +2970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2d23dee15f346beae79b2f9dc6f617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.PlayerSpawner
-  carConfigs:
-  - {fileID: 11400000, guid: 1a75c553d256b46ba80ed56437f84cb9, type: 2}
-  - {fileID: 11400000, guid: 75d40f8c4166e4e64953dd566b0da543, type: 2}
-  - {fileID: 11400000, guid: d6296760d33854a84b84be9380119b44, type: 2}
   cameraController: {fileID: 517302958}
 --- !u!1001 &1052815398
 PrefabInstance:
@@ -5702,9 +5701,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.TrafficSpawner
   player: {fileID: 1014270209}
   trafficPrefabs:
-  - {fileID: 3148865166297203229, guid: 092123eb3167c4d4c8d9e4a64037859e, type: 3}
-  - {fileID: 9004981528941783965, guid: a3967e2cc9dda3d46a7f39440056c361, type: 3}
-  - {fileID: 4394957070484452981, guid: 9b5ac8f19d4ecf943b4b8775c0da46b0, type: 3}
+  - {fileID: 6691748640286828396, guid: 646526c3b494f4055ae0a058e2bc1ae2, type: 3}
+  - {fileID: -3748629925518882022, guid: e95799abfdbfd4c7eabcb3b0a3c4a9e2, type: 3}
+  - {fileID: -7758556709672480698, guid: ea823cb666b094e5f8a8e3ec4a41771f, type: 3}
   carSpawner: {fileID: 1014270213}
   spawnDistance: 100
   spawnInterval: 0.5

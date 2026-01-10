@@ -18,7 +18,7 @@ namespace Southbyte.LevelGenerationSystem
         public float tileLength = 40f;
         public int tilesAhead = 6;
         
-        private float spawnZ = 0f;
+        private float spawnZ;
         private Queue<GameObject> spawned = new Queue<GameObject>();
         
         
@@ -30,7 +30,13 @@ namespace Southbyte.LevelGenerationSystem
         }
         
         
-        void SpawnTile()
+        public void SetLevelActive(bool value)
+        {
+            _container.gameObject.SetActive(value);
+        }
+        
+        
+        private void SpawnTile()
         {
             var tile = Instantiate(roadTiles.GetRandomElement(), Vector3.forward * spawnZ, Quaternion.identity);
             tile.transform.SetParent(_container);
@@ -53,7 +59,11 @@ namespace Southbyte.LevelGenerationSystem
         
         private void StartSpawning()
         {
+            for(var i = spawned.Count - 1; i >= 0; i--)
+                Destroy(spawned.Dequeue());
+            
             _container.gameObject.SetActive(true);
+            spawnZ = 0;
             
             for (var i = 0; i < tilesAhead; i++)
                 SpawnTile();
@@ -63,11 +73,6 @@ namespace Southbyte.LevelGenerationSystem
         
         private void StopSpawning()
         {
-            _container.gameObject.SetActive(false);
-            
-            for(var i = spawned.Count - 1; i >= 0; i--)
-                Destroy(spawned.Dequeue());
-            
             StopAllCoroutines();
         }
     }

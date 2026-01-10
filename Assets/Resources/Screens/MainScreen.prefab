@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630d1d9320123904a990f1d7a0a8840b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.ScreensSystem.MainScreen
-  _isBaseOpeningAnimationAllowed: 0
+  _isBaseOpeningAnimationAllowed: 1
   _isBaseClosingAnimationAllowed: 1
   _canvasGroup: {fileID: 3898204276891616460}
 --- !u!1001 &2070287219435243039

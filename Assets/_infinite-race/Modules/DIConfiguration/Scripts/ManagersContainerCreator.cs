@@ -15,6 +15,7 @@ namespace Southbyte.DIConfiguration
     public class ManagersContainerCreator
     {
         public event Action OnServicesInitializationFailed;
+        public event Action OnServicesInitializationCompleted;
         
         private EarlyScreenManager _earlyScreenManager;
         
@@ -63,6 +64,7 @@ namespace Southbyte.DIConfiguration
                 _stopwatch.Stop();
                 DebugPro.Log($"Initialization completed, total take seconds:{Time.realtimeSinceStartup - _initializeTimeMarker}; realtimeSinceStartup:{RealtimeSinceStartup}");
 #endif
+                OnServicesInitializationCompleted?.Invoke();
             }
             catch (Exception e)
             {

@@ -33,6 +33,22 @@ namespace Southbyte.ScreensSystem
             return GetTopScreen() != null;
         }
         
+        public bool TryGetScreen<T>(string screenId, out T screen) where T : ScreenBase
+        {
+            screen = null;
+            
+            foreach(var keyValuePair in _cachedScreens)
+            {
+                if(keyValuePair.Key == screenId)
+                {
+                    screen = keyValuePair.Value as T;
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
         public T Open<T>(string screenId, bool isImmediately = false) where T : ScreenBase
         {
             if(screenId.IsNullOrEmptyOrWhiteSpace())
