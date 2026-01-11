@@ -960,7 +960,13 @@ MonoBehaviour:
   _steerSpeed: 6
   _laneLimit: 4
   _headlights: {fileID: 2029642740570566506}
-  _isEngineStarted: 0
+  _frontLeftWheel: {fileID: 5668210593766852500}
+  _frontRightWheel: {fileID: 8138486985241925602}
+  _rearLeftWheel: {fileID: 8815301166118929446}
+  _rearRightWheel: {fileID: 3822167815458109133}
+  _wheelRotateSpeed: 360
+  _maxSteerAngle: 30
+  _steerReturnSpeed: 8
   config: {fileID: 11400000, guid: 1a75c553d256b46ba80ed56437f84cb9, type: 2}
 --- !u!1 &7068486951366307513
 GameObject:

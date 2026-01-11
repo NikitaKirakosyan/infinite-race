@@ -1,5 +1,3 @@
-
-using System;
 using UnityEngine;
 using Zenject;
 
@@ -7,21 +5,42 @@ namespace Southbyte.RaceSystem
 {
     public class CarController : MonoBehaviour
     {
-        [SerializeField] private float _minSpeed = 50;
-        [SerializeField] private float _maxSpeed = 70;
-        [SerializeField] private float _acceleration = 15;
-        [SerializeField] private float _deceleration = 25;
-        [SerializeField] private float _steerSpeed = 6;
         [SerializeField] private float _laneLimit = 4;
         [SerializeField] private GameObject _headlights;
         
+        [Header("Wheels")]
+        [SerializeField] private Transform _frontLeftWheel;
+        [SerializeField] private Transform _frontRightWheel;
+        [SerializeField] private Transform _rearLeftWheel;
+        [SerializeField] private Transform _rearRightWheel;
+        [SerializeField] private float _wheelRotateSpeed = 360;
+        [SerializeField] private float _maxSteerAngle = 30;
+        [SerializeField] private float _steerReturnSpeed = 8;
+        
+        [Header("Steering")]
+        [SerializeField] private float steerResponsiveness = 6f; // как быстро реагирует
+        [SerializeField] private float yawStability = 8f;         // возврат корпуса
+        [SerializeField] private float maxBodyRoll = 8f;
+        [SerializeField] private float rollSpeed = 6f;
+        
         [Inject] private GameManager _gameManager;
         [Inject] private ScoreManager _scoreManager;
+        [Inject] private CarProgressManager _carProgressManager;
+        
+        private bool _isEngineStarted;
         
         private float _currentSpeed;
-        [SerializeField] private bool _isEngineStarted;
+        private float _currentSteerAngle;
+        private float _minSpeed = 50;
+        private float _maxSpeed = 70;
+        private float _acceleration = 15;
+        private float _deceleration = 25;
+        private float _steerSpeed = 6f;
+        private float _lateralSpeed = 6f;
         
-        public float CurrentSpeed => _currentSpeed * 4;
+        private CarProgress _carProgress;
+        
+        public float CurrentSpeed => _currentSpeed;
         
         public CarConfig config;
         
@@ -56,9 +75,6 @@ namespace Southbyte.RaceSystem
             
             _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
             
-            // Forward move
-            transform.Translate(Vector3.forward * _currentSpeed * Time.deltaTime);
-            
             // Steering
             var steer = 0f;
             
@@ -68,10 +84,69 @@ namespace Southbyte.RaceSystem
             if (Input.GetKey(KeyCode.D)) 
                 steer = 1f;
             
-            var pos = transform.position;
-            pos.x += steer * _steerSpeed * Time.deltaTime;
-            pos.x = Mathf.Clamp(pos.x, -_laneLimit, _laneLimit);
-            transform.position = pos;
+            var steerInput = Input.GetAxis("Horizontal"); // A/D
+            
+            //Yaw rotation
+            var targetYaw = steerInput * _maxSteerAngle;
+            
+            var currentYaw = Mathf.LerpAngle(
+                transform.localEulerAngles.y,
+                targetYaw,
+                steerResponsiveness * Time.deltaTime
+            );
+            
+            var stabilizedYaw = Mathf.LerpAngle(
+                currentYaw,
+                0f,
+                yawStability * Time.deltaTime
+            );
+            
+            transform.localRotation = Quaternion.Euler(
+                transform.localEulerAngles.x,
+                stabilizedYaw,
+                transform.localEulerAngles.z
+            );
+            
+            //Roll
+            var targetRoll = -steerInput * maxBodyRoll;
+            
+            var currentRoll = Mathf.Lerp(
+                transform.localEulerAngles.z > 180
+                    ? transform.localEulerAngles.z - 360
+                    : transform.localEulerAngles.z,
+                targetRoll,
+                rollSpeed * Time.deltaTime
+            );
+            
+            transform.localRotation = Quaternion.Euler(
+                transform.localEulerAngles.x,
+                transform.localEulerAngles.y,
+                currentRoll
+            );
+            
+            //Front wheel rotation
+            var targetSteer = steerInput * _maxSteerAngle;
+            
+            _currentSteerAngle = Mathf.Lerp(
+                _currentSteerAngle,
+                targetSteer,
+                _steerReturnSpeed * Time.deltaTime
+            );
+            
+            _frontLeftWheel.localRotation = Quaternion.Euler(_frontLeftWheel.localEulerAngles.x, _currentSteerAngle, 0);
+            _frontRightWheel.localRotation = Quaternion.Euler(_frontRightWheel.localEulerAngles.x, _currentSteerAngle, 0);
+            
+            // All wheels spinning
+            var rotation = _currentSpeed * _wheelRotateSpeed * Time.deltaTime;
+            _frontLeftWheel.Rotate(Vector3.right, rotation);
+            _frontRightWheel.Rotate(Vector3.right, rotation);
+            _rearLeftWheel.Rotate(Vector3.right, rotation);
+            _rearRightWheel.Rotate(Vector3.right, rotation);
+            
+            // Move
+            transform.root.Translate(Vector3.forward * _currentSpeed * Time.deltaTime);
+            transform.root.Translate(Vector3.right * steerInput * _steerSpeed * Time.deltaTime);
+            transform.localRotation = Quaternion.Euler(0f, stabilizedYaw, currentRoll);
             
             // Lights
             if (Input.GetKeyDown(KeyCode.L))
@@ -108,12 +183,13 @@ namespace Southbyte.RaceSystem
         
         private void ApplyConfig()
         {
-            _minSpeed = config.minSpeed;
-            _maxSpeed = config.maxSpeed;
-            _acceleration = config.acceleration;
-            _deceleration = config.deceleration;
-            _steerSpeed = config.steerSpeed;
-            _laneLimit = config.laneLimit;
+            _carProgress = _carProgressManager.Get(config.carId);
+            
+            _minSpeed = CarConfig.MinSpeed;
+            _maxSpeed = CarStatsResolver.MaxSpeed(config, _carProgress);
+            _acceleration = CarStatsResolver.Power(config, _carProgress);
+            _deceleration = CarStatsResolver.Brake(config, _carProgress);
+            _steerSpeed = CarStatsResolver.Handling(config, _carProgress);
             
             _scoreManager.SetMultiplier(config.scoreMultiplier);
         }

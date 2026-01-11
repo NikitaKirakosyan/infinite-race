@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: pickup_car
   prefab: {fileID: 8018424140572277383, guid: 88c873a865ebab3459fe926b71eab9b1, type: 3}
-  minSpeed: 40
-  maxSpeed: 50
-  acceleration: 15
-  deceleration: 25
-  steerSpeed: 6
-  laneLimit: 6
-  scoreMultiplier: 1.5
+  baseMaxSpeed: 40
+  basePower: 10
+  baseBrake: 10
+  baseHandling: 5
+  laneLimit: 4
+  maxMaxSpeed: 100
+  maxPower: 20
+  maxBrake: 30
+  maxHandling: 10
+  speedStep: 2
+  powerStep: 1.5
+  brakeStep: 2
+  handlingStep: 1
+  scoreMultiplier: 1

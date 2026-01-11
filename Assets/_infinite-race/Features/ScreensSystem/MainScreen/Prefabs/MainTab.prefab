@@ -1920,6 +1920,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7380953997632104522, guid: 6a4c16261fc7648dcb7ea2734a2cb540, type: 3}
+      propertyPath: _carNameText
+      value: 
+      objectReference: {fileID: 2876488879523363393}
     - target: {fileID: 7514726448852564665, guid: 6a4c16261fc7648dcb7ea2734a2cb540, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

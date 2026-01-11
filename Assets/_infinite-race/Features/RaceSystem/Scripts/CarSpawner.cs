@@ -34,7 +34,7 @@ namespace Southbyte.RaceSystem
                 Destroy(currentCar.gameObject);
             }
             
-            currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, position, Quaternion.identity, null);
+            currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, position, Quaternion.identity, transform);
             cameraController.SetTarget(currentCar.transform);
             OnCarSpawned?.Invoke(currentCar);
         }

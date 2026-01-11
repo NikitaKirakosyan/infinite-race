@@ -840,6 +840,7 @@ GameObject:
   - component: {fileID: 8099028658907842138}
   - component: {fileID: 5680642398543716442}
   - component: {fileID: 3288497205995165219}
+  - component: {fileID: 7380953997632104522}
   m_Layer: 0
   m_Name: CarInfoRoot
   m_TagString: Untagged
@@ -915,6 +916,23 @@ MonoBehaviour:
   ChildForceExpandHeight: 0
   invertOrder: 0
   m_StartAxis: 0
+--- !u!114 &7380953997632104522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156897669690861528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f68a4da0c4a40aeb52ab3be109d9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoController
+  _carNameText: {fileID: 0}
+  _maxSpeedView: {fileID: 7643593732376824280}
+  _powerView: {fileID: 259724887753911484}
+  _brakeView: {fileID: 4531612435233327259}
+  _handlingView: {fileID: 3785424902290948154}
 --- !u!1 &6749980296007963500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1339,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3977082517140520887, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
   m_PrefabInstance: {fileID: 2203857642007185335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7643593732376824280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8396447869135441519, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+  m_PrefabInstance: {fileID: 2203857642007185335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420154948550662407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406be5546d8f64079ab1c0dc35c2eb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoView
 --- !u!1001 &4615814947759132245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,7 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name
-      value: MaxSpeedCarInfoView (3)
+      value: HandlingCarInfoView
       objectReference: {fileID: 0}
     - target: {fileID: 3134660828585428300, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1598,6 +1627,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+--- !u!114 &3785424902290948154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8396447869135441519, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+  m_PrefabInstance: {fileID: 4615814947759132245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406be5546d8f64079ab1c0dc35c2eb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoView
 --- !u!224 &8592802423579128290 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3977082517140520887, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
@@ -1621,7 +1661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name
-      value: MaxSpeedCarInfoView (2)
+      value: BrakeCarInfoView
       objectReference: {fileID: 0}
     - target: {fileID: 3134660828585428300, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1880,6 +1920,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+--- !u!114 &4531612435233327259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8396447869135441519, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+  m_PrefabInstance: {fileID: 5360877134715029236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406be5546d8f64079ab1c0dc35c2eb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoView
 --- !u!224 &9031061008686758211 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3977082517140520887, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
@@ -1903,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name
-      value: MaxSpeedCarInfoView (1)
+      value: PowerCarInfoView
       objectReference: {fileID: 0}
     - target: {fileID: 3134660828585428300, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2162,6 +2213,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+--- !u!114 &259724887753911484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8396447869135441519, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
+  m_PrefabInstance: {fileID: 8582900677066433235}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406be5546d8f64079ab1c0dc35c2eb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoView
 --- !u!224 &4624627044189379940 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3977082517140520887, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}

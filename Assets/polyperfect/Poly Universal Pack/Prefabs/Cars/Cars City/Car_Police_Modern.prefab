@@ -853,7 +853,13 @@ MonoBehaviour:
   _steerSpeed: 6
   _laneLimit: 6
   _headlights: {fileID: 4293069797581642535}
-  _isEngineStarted: 0
+  _frontLeftWheel: {fileID: 4310786761109869273}
+  _frontRightWheel: {fileID: 4365393760329126659}
+  _rearLeftWheel: {fileID: 211034288230010281}
+  _rearRightWheel: {fileID: 3822969108689810041}
+  _wheelRotateSpeed: 360
+  _maxSteerAngle: 30
+  _steerReturnSpeed: 8
   config: {fileID: 11400000, guid: d6296760d33854a84b84be9380119b44, type: 2}
 --- !u!65 &9168857969771644638
 BoxCollider:

@@ -21,20 +21,16 @@ namespace Southbyte
         
         private void Awake()
         {
-            _gameManager.OnGameStarted += Setup;
             _gameManager.OnGameOver += Cleanup;
         }
         
         private void LateUpdate()
         {
+            if(_gameManager.IsPlaying && _carController == null)
+                _carController = FindFirstObjectByType<CarController>();
+            
             if(_carController)
-                _text.text = $"Speed: {_carController.CurrentSpeed:0}km/h";
-        }
-        
-        
-        private void Setup()
-        {
-            _carController = FindObjectOfType<CarController>();
+                _text.text = $"Speed: {_carController.CurrentSpeed * 3.6f:0}km/h";
         }
         
         private void Cleanup()

@@ -13,9 +13,17 @@ namespace Southbyte
         [SerializeField] private Button _buyButton;
         
         
-        public void Setup()
+        public void Setup(float currentValue, float maxValue)
         {
+            _valuesText.text = $"{currentValue}/{maxValue}";
             
+            _currentValueSlider.minValue = 0;
+            _currentValueSlider.maxValue = maxValue;
+            _currentValueSlider.value = currentValue;
+            
+            _priceText.gameObject.SetActive(false);
+            _nextValueSlider.gameObject.SetActive(false);
+            _buyButton.gameObject.SetActive(false);
         }
     }
 }

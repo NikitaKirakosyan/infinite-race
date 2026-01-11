@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: cabrio_car
   prefab: {fileID: 7654369706139800605, guid: 739dce61952b5624d9b547ee31f850f7, type: 3}
-  minSpeed: 40
-  maxSpeed: 150
-  acceleration: 30
-  deceleration: 50
-  steerSpeed: 6
-  laneLimit: 6
-  scoreMultiplier: 3
+  baseMaxSpeed: 40
+  basePower: 10
+  baseBrake: 10
+  baseHandling: 5
+  laneLimit: 4
+  maxMaxSpeed: 100
+  maxPower: 20
+  maxBrake: 30
+  maxHandling: 10
+  speedStep: 2
+  powerStep: 1.5
+  brakeStep: 2
+  handlingStep: 1
+  scoreMultiplier: 1
