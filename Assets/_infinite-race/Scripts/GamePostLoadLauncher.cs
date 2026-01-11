@@ -1,5 +1,6 @@
 using Southbyte.DIConfiguration;
 using Southbyte.ScreensSystem;
+using UnityEngine;
 using Zenject;
 
 namespace Southbyte
@@ -12,6 +13,7 @@ namespace Southbyte
         {
             gameManager.InitAfterLoad(screenManager);
             screenManager.Open<MainScreen>(ScreenIds.MainScreen);
+            Object.FindFirstObjectByType<HUDController>(FindObjectsInactive.Include).Init(diContainer);
         }
     }
 }

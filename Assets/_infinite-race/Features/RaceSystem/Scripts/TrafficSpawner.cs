@@ -14,7 +14,7 @@ namespace Southbyte.RaceSystem
         public TrafficCar[] trafficPrefabs;
         public CarSpawner carSpawner;
         
-        public float spawnDistance = 120f;
+        public float spawnDistance = 60f;
         public float spawnInterval = 1.2f;
         
         public float laneOffset = 2.5f;
@@ -27,6 +27,7 @@ namespace Southbyte.RaceSystem
         {
             _gameManager.OnGameStarted += StartSpawning;
             _gameManager.OnGameOver += StopSpawning;
+            _gameManager.OnGameBraked += StopSpawning;
             
             carSpawner.OnCarSpawned += (car) => player = car.transform;
         }
@@ -66,7 +67,6 @@ namespace Southbyte.RaceSystem
             
             var tc = car.GetComponent<TrafficCar>();
             tc.IsOncoming = oncoming;
-            tc.Speed = Random.Range(8f, 14f);
             _spawnedCars.Add(tc);
         }
         

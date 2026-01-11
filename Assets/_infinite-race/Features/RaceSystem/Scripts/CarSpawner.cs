@@ -29,10 +29,7 @@ namespace Southbyte.RaceSystem
             var position = transform.position;
             
             if (currentCar != null)
-            {
-                position = currentCar.transform.position;
                 Destroy(currentCar.gameObject);
-            }
             
             currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, position, Quaternion.identity, transform);
             cameraController.SetTarget(currentCar.transform);

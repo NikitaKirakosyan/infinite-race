@@ -31,6 +31,7 @@ namespace Southbyte.RaceSystem
                 Destroy(_currentCar.gameObject);
             
             _currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, transform.position, Quaternion.identity, transform);
+            Destroy(_currentCar.GetComponent<CarController>());
             _currentCar.transform.localEulerAngles = Vector3.zero;
         }
     }

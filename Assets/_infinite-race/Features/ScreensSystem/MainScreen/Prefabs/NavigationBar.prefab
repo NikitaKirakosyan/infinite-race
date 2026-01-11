@@ -910,7 +910,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 4
   SpacingX: 20
-  SpacingY: 20
+  SpacingY: 0
   ExpandHorizontalSpacing: 0
   ChildForceExpandWidth: 0
   ChildForceExpandHeight: 0
@@ -1039,11 +1039,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 142021535039312730, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1864794587042618962, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name
@@ -1304,36 +1304,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3049919419320900935}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
---- !u!1 &420154948550662407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
-  m_PrefabInstance: {fileID: 2203857642007185335}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3049919419320900935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420154948550662407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: 100
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!224 &3000738357049161728 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3977082517140520887, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
@@ -1344,7 +1316,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8396447869135441519, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
   m_PrefabInstance: {fileID: 2203857642007185335}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420154948550662407}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 406be5546d8f64079ab1c0dc35c2eb45, type: 3}
@@ -1360,11 +1332,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 142021535039312730, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1864794587042618962, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name
@@ -1653,11 +1625,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 142021535039312730, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1864794587042618962, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name
@@ -1946,11 +1918,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 142021535039312730, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1864794587042618962, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1963882155539062448, guid: 80f25bae7c64a40458050a2fcb29a036, type: 3}
       propertyPath: m_Name

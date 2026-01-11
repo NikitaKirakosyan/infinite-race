@@ -19,9 +19,9 @@ namespace Southbyte.RaceSystem
         
         [Header("Steering")]
         [SerializeField] private float steerResponsiveness = 6f; // как быстро реагирует
-        [SerializeField] private float yawStability = 8f;         // возврат корпуса
-        [SerializeField] private float maxBodyRoll = 8f;
-        [SerializeField] private float rollSpeed = 6f;
+        [SerializeField] private float yawStability = 10f;         // возврат корпуса
+        [SerializeField] private float maxBodyRoll = 12f;
+        [SerializeField] private float rollSpeed = 12f;
         
         [Inject] private GameManager _gameManager;
         [Inject] private ScoreManager _scoreManager;
@@ -48,7 +48,12 @@ namespace Southbyte.RaceSystem
         private void Awake()
         {
             _gameManager.OnGameStarted += StartEngine;
-            _gameManager.OnGameOver += StopEngine;
+            _gameManager.OnGameOver += OnGameOver;
+            _gameManager.OnGameResumed += OnGameResumed;
+            _gameManager.OnGamePaused += OnGamePaused;
+            _gameManager.OnGameRestarted += OnGameRestarted;
+            _gameManager.OnGameBraked += OnGameBraked;
+            
             SetHeadlightsActive(false);
             
             if(_gameManager.IsPlaying)
@@ -58,7 +63,11 @@ namespace Southbyte.RaceSystem
         private void OnDestroy()
         {
             _gameManager.OnGameStarted -= StartEngine;
-            _gameManager.OnGameOver -= StopEngine;
+            _gameManager.OnGameOver -= OnGameOver;
+            _gameManager.OnGameResumed -= OnGameResumed;
+            _gameManager.OnGamePaused -= OnGamePaused;
+            _gameManager.OnGameRestarted -= OnGameRestarted;
+            _gameManager.OnGameBraked -= OnGameBraked;
         }
         
         private void Update()
@@ -69,11 +78,18 @@ namespace Southbyte.RaceSystem
             // Speed
             if (Input.GetKey(KeyCode.W))
                 _currentSpeed += _acceleration * Time.deltaTime;
+            else
+                _currentSpeed -= _deceleration / 10f * Time.deltaTime;
             
             if (Input.GetKey(KeyCode.S))
                 _currentSpeed -= _deceleration * Time.deltaTime;
             
-            _currentSpeed = Mathf.Clamp(_currentSpeed, 0f, _maxSpeed);
+            _currentSpeed = Mathf.Clamp(_currentSpeed, CarConfig.MinSpeed, _maxSpeed);
+            
+            //Camera fov
+            var t = Mathf.InverseLerp(CarConfig.MinSpeed, _maxSpeed, _currentSpeed);
+            var targetFov = Mathf.Lerp(40, 80, t);
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, targetFov, 5f * Time.deltaTime);
             
             // Steering
             var steer = 0f;
@@ -157,6 +173,8 @@ namespace Southbyte.RaceSystem
         {
             _gameManager.GameOver();
             Destroy(gameObject);
+            
+            FindFirstObjectByType<CameraController>().LateFly();
         }
         
         
@@ -192,6 +210,41 @@ namespace Southbyte.RaceSystem
             _steerSpeed = CarStatsResolver.Handling(config, _carProgress);
             
             _scoreManager.SetMultiplier(config.scoreMultiplier);
+        }
+        
+        private void OnGameOver()
+        {
+            StopEngine();
+            transform.root.position = Vector3.zero;
+            transform.root.localEulerAngles = Vector3.zero;
+            transform.localEulerAngles = Vector3.zero;
+        }
+        
+        private void OnGameResumed()
+        {
+            _isEngineStarted = true;
+        }
+        
+        private void OnGamePaused()
+        {
+            _isEngineStarted = false;
+        }
+        
+        private void OnGameRestarted()
+        {
+            transform.root.position = Vector3.zero;
+            transform.root.localEulerAngles = Vector3.zero;
+            transform.localEulerAngles = Vector3.zero;
+        }
+        
+        private void OnGameBraked()
+        {
+            transform.root.position = Vector3.zero;
+            transform.root.localEulerAngles = Vector3.zero;
+            transform.localEulerAngles = Vector3.zero;
+            
+            StopEngine();
+            Destroy(gameObject);
         }
     }
 }

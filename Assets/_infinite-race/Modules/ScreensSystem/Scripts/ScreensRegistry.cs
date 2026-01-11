@@ -13,6 +13,7 @@ namespace Southbyte.ScreensSystem
             { ScreenIds.InitialScreen, $"Screens/{ScreenIds.InitialScreen}" },
             { ScreenIds.MainScreen, $"Screens/{ScreenIds.MainScreen}" },
             { ScreenIds.EndScreen, $"Screens/{ScreenIds.EndScreen}" },
+            { ScreenIds.PauseScreen, $"Screens/{ScreenIds.PauseScreen}" },
             //Popups
             { ScreenIds.AuthorizationPopup, $"Popups/{ScreenIds.AuthorizationPopup}" },
             { ScreenIds.RateUsPopup, $"Popups/{ScreenIds.RateUsPopup}" },

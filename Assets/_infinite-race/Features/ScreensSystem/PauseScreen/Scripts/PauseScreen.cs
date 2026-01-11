@@ -6,11 +6,11 @@ using Zenject;
 
 namespace Southbyte.ScreensSystem
 {
-    public class EndScreen : ScreenBase
+    public class PauseScreen : ScreenBase
     {
-        [SerializeField] private Button _adsButton;
+        [SerializeField] private Button _continueButton;
+        [SerializeField] private Button _restartButton;
         [SerializeField] private Button _menuButton;
-        [SerializeField] private Button _playButton;
         
         [Inject] private GameManager _gameManager;
         [Inject] private ScreenManager _screenManager;
@@ -18,38 +18,48 @@ namespace Southbyte.ScreensSystem
         [Inject] private ShowcaseController _showcaseController;
         [Inject] private TrafficSpawner _trafficSpawner;
         
-        public override string Id => ScreenIds.EndScreen;
+        public override string Id => ScreenIds.PauseScreen;
         
         
         protected override void Awake()
         {
             base.Awake();
-            _adsButton.onClick.AddListener(OnAdsButtonClick);
+            _continueButton.onClick.AddListener(OnContinueButtonClick);
+            _restartButton.onClick.AddListener(OnRestartButtonClick);
             _menuButton.onClick.AddListener(OnMenuButtonClick);
-            _playButton.onClick.AddListener(OnPlayButtonClick);
+        }
+        
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            _gameManager.Pause();
         }
         
         
-        private void OnAdsButtonClick()
+        private void OnContinueButtonClick()
         {
-            
+            Close();
+            _gameManager.Resume();
+        }
+        
+        private void OnRestartButtonClick()
+        {
+            Close();
+            _gameManager.Restart();
         }
         
         private void OnMenuButtonClick()
         {
+            Destroy(FindFirstObjectByType<CarController>().gameObject);
+            
             _showcaseController.Show();
             _trafficSpawner.CleanTraffic();
             _levelGenerator.SetLevelActive(false);
             Camera.main.gameObject.SetActive(false);
             
+            _gameManager.Brake();
             Close();
             _screenManager.Open<MainScreen>(ScreenIds.MainScreen);
-        }
-        
-        private void OnPlayButtonClick()
-        {
-            Close();
-            _gameManager.Restart();
         }
     }
 }

@@ -26,6 +26,8 @@ namespace Southbyte.LevelGenerationSystem
         {
             _gameManager.OnGameStarted += StartSpawning;
             _gameManager.OnGameOver += StopSpawning;
+            _gameManager.OnGameBraked += StopSpawning;
+            
             carSpawner.OnCarSpawned += (car) => player = car.transform;
         }
         

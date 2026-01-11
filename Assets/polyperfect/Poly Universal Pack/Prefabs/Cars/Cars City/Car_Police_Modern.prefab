@@ -846,11 +846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1172467c403142898a7053b81a0abe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarController
-  _minSpeed: 5
-  _maxSpeed: 50
-  _acceleration: 15
-  _deceleration: 25
-  _steerSpeed: 6
   _laneLimit: 6
   _headlights: {fileID: 4293069797581642535}
   _frontLeftWheel: {fileID: 4310786761109869273}
@@ -860,6 +855,10 @@ MonoBehaviour:
   _wheelRotateSpeed: 360
   _maxSteerAngle: 30
   _steerReturnSpeed: 8
+  steerResponsiveness: 6
+  yawStability: 12
+  maxBodyRoll: 12
+  rollSpeed: 6
   config: {fileID: 11400000, guid: d6296760d33854a84b84be9380119b44, type: 2}
 --- !u!65 &9168857969771644638
 BoxCollider:

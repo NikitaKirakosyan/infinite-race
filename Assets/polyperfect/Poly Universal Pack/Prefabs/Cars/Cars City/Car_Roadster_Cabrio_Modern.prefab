@@ -953,11 +953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1172467c403142898a7053b81a0abe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarController
-  _minSpeed: 10
-  _maxSpeed: 70
-  _acceleration: 15
-  _deceleration: 25
-  _steerSpeed: 6
   _laneLimit: 4
   _headlights: {fileID: 2029642740570566506}
   _frontLeftWheel: {fileID: 5668210593766852500}
@@ -967,6 +962,10 @@ MonoBehaviour:
   _wheelRotateSpeed: 360
   _maxSteerAngle: 30
   _steerReturnSpeed: 8
+  steerResponsiveness: 6
+  yawStability: 12
+  maxBodyRoll: 12
+  rollSpeed: 6
   config: {fileID: 11400000, guid: 1a75c553d256b46ba80ed56437f84cb9, type: 2}
 --- !u!1 &7068486951366307513
 GameObject:
