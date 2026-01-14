@@ -19,11 +19,8 @@ namespace Southbyte
         {
             var abs = Mathf.Abs(number);
             
-            if (abs < 1000)
-                return number.ToString();
-            
             if (abs < 1000000)
-                return ToFloorWithOneDecimalPoint(number, 1000, "k");
+                return number.ToString();
             
             if (abs < 1000000000)
                 return ToFloorWithOneDecimalPoint(number, 1000000, "M");

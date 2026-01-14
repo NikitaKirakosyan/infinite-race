@@ -65,8 +65,10 @@ namespace Southbyte
             if(_scoreManager.Distance > YG2.saves.bestDistance)
                 YG2.saves.bestDistance = _scoreManager.Distance;
             
+            var money = Mathf.RoundToInt(_scoreManager.Distance * 2);
+            
             var endScreen = _screenManager.Open<EndScreen>(ScreenIds.EndScreen);
-            endScreen.Setup(_scoreManager.Score, _scoreManager.Distance, 1000, YG2.saves.bestScore, YG2.saves.bestDistance);
+            endScreen.Setup(_scoreManager.Score, _scoreManager.Distance, money, YG2.saves.bestScore, YG2.saves.bestDistance);
             
             IsPlaying = false;
             OnGameOver?.Invoke();

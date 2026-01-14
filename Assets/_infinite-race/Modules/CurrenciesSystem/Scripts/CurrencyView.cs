@@ -18,7 +18,18 @@ namespace Southbyte.CurrenciesSystem
         private Vector2? _imagePosition;
         
         public CurrencyType CurrencyType => _currencyType;
-        public CurrenciesConfig Config => _currenciesManager.CurrenciesConfig;
+        public CurrenciesConfig CurrenciesConfig => _currenciesManager.CurrenciesConfig;
+        
+        public CurrencySettings Settings
+        {
+            get
+            {
+                if(CurrenciesConfig.TryGetSettings(_currencyType, out CurrencySettings settings))
+                    return settings;
+                
+                return default;
+            }
+        }
         
         
         private void Reset()
@@ -51,16 +62,21 @@ namespace Southbyte.CurrenciesSystem
         
         public void Refresh()
         {
-            _currencyCountText.text = _currenciesManager.GetCurrency(_currencyType).To1kString();
+            if(_currencyType == CurrencyType.Money)
+                _currencyCountText.text = $"${_currenciesManager.GetCurrency(_currencyType).To1kString()}";
+            else
+                _currencyCountText.text = _currenciesManager.GetCurrency(_currencyType).To1kString();
+            
+            _currencyCountText.color = Settings.color;
         }
         
         public void Animate()
         {
             _currencyImage.transform.DOKill(true);
-            _currencyImage.transform.DOPunchScale(Config.punchScale, Config.punchDuration, Config.vibrato, Config.elasticity).SetLink(_currencyImage.gameObject);
+            _currencyImage.transform.DOPunchScale(CurrenciesConfig.punchScale, CurrenciesConfig.punchDuration, CurrenciesConfig.vibrato, CurrenciesConfig.elasticity).SetLink(_currencyImage.gameObject);
             
             _currencyCountText.transform.DOKill(true);
-            _currencyCountText.transform.DOPunchScale(Config.punchScale, Config.punchDuration, Config.vibrato, Config.elasticity).SetLink(_currencyImage.gameObject);
+            _currencyCountText.transform.DOPunchScale(CurrenciesConfig.punchScale, CurrenciesConfig.punchDuration, CurrenciesConfig.vibrato, CurrenciesConfig.elasticity).SetLink(_currencyImage.gameObject);
         }
         
         public Vector2 GetImagePosition()

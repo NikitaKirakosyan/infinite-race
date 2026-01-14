@@ -19,5 +19,7 @@ MonoBehaviour:
   currencySettings:
   - type: 0
     icon: {fileID: 21300000, guid: feff93c1978bc224c93e4d892462632f, type: 3}
+    color: {r: 1, g: 0.95985556, b: 0, a: 1}
   - type: 1
     icon: {fileID: -9095717837082945937, guid: 8913c5d85b5db3540aa5bcf4c1649a99, type: 3}
+    color: {r: 0.36833328, g: 0.85, b: 0.12749998, a: 1}

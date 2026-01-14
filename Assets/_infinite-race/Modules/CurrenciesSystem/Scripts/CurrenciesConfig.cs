@@ -35,5 +35,6 @@ namespace Southbyte.CurrenciesSystem
     {
         public CurrencyType type;
         public Sprite icon;
+        public Color color;
     }
 }
