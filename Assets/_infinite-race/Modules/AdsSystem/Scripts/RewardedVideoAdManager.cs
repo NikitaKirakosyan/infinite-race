@@ -12,11 +12,11 @@ namespace Southbyte.AdsSystem
         
         public void Init()
         {
-            DebugPro.Log("InterstitialAdManager initialize requested.", this);
+            DebugPro.Log("RewardedVideoAdManager initialize requested.", this);
             
             if(_isInitialized)
             {
-                DebugPro.LogError("InterstitialAdManager is already initialized!", this);
+                DebugPro.LogError("RewardedVideoAdManager is already initialized!", this);
                 return;
             }
             
@@ -27,13 +27,13 @@ namespace Southbyte.AdsSystem
             _rewardedVideoAdsProvider.OnRewardedVideoAdClosed += HandleRewardedVideoAdClose;
         }
         
-        public void ShowInterstitialAd(Action onComplete = null)
+        public void ShowRewardedVideoAd(Action onComplete = null)
         {
-            DebugPro.Log($"Interstitial ad display requested. Provider: {_rewardedVideoAdsProvider.GetType()}", this);
+            DebugPro.Log($"Rewarded ad display requested. Provider: {_rewardedVideoAdsProvider.GetType()}", this);
             
             if(!_rewardedVideoAdsProvider.IsReady)
             {
-                DebugPro.Log("Interstitial ad is not ready yet.", this);
+                DebugPro.Log("Rewarded ad is not ready yet.", this);
                 return;
             }
             
@@ -45,10 +45,10 @@ namespace Southbyte.AdsSystem
         {
             IRewardedVideoAdsProvider rewardedVideoAdsProvider;
             
-#if InterstitialAdv_yg
+#if RewardedAdv_yg
             rewardedVideoAdsProvider = new YandexRewardedVideoAdsProvider();
 #else
-            throw new PlatformNotSupportedException("This platform does not support interstitial ads.");
+            throw new PlatformNotSupportedException("This platform does not support rewarded ads.");
 #endif
             return rewardedVideoAdsProvider;
         }

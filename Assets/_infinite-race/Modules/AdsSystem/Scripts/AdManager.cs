@@ -112,7 +112,7 @@ namespace Southbyte.AdsSystem
         
         public void ShowRewardedVideoAd(Action onComplete = null)
         {
-            _rewardedVideoAdManager.ShowInterstitialAd(onComplete);
+            _rewardedVideoAdManager.ShowRewardedVideoAd(onComplete);
         }
         
         
