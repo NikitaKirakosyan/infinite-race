@@ -51,7 +51,7 @@ namespace Southbyte
             var elapsedTime = 0f;
             while(elapsedTime < _lateFlyDuration)
             {
-                transform.Translate(transform.forward * _lateFlySpeed * Time.deltaTime);
+                transform.Translate(Vector3.forward * _lateFlySpeed * Time.deltaTime, Space.World);
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }

@@ -11,5 +11,7 @@ namespace YG
         public List<SerializablePair<CurrencyType, int>> currencies = new ();
         public StoreSaveData storeSaveData = new ();
         public string selectedCarId;
+        public float bestScore;
+        public float bestDistance;
     }
 }

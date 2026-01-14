@@ -1344,8 +1344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CameraController
   _target: {fileID: 1014270209}
-  _lateFlyDuration: 2
-  _lateFlySpeed: 2
+  _lateFlyDuration: 1.5
+  _lateFlySpeed: 20
   _autoPosition: 1
   _offsetPosition: {x: 0, y: -3.5, z: 9}
 --- !u!1 &521258384

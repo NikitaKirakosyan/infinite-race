@@ -20,6 +20,7 @@ namespace Southbyte
         [SerializeField] private Camera _mainCamera;
         
         [Inject] private CurrenciesManager _currenciesManager;
+        [Inject] private ScoreManager _scoreManager;
         
         private ScreenManager _screenManager;
         
@@ -57,7 +58,16 @@ namespace Southbyte
         public void GameOver()
         {
             Time.timeScale = 1;
-            _screenManager.Open<EndScreen>(ScreenIds.EndScreen);
+            
+            if(_scoreManager.Score > YG2.saves.bestScore)
+                YG2.saves.bestScore =  _scoreManager.Score;
+            
+            if(_scoreManager.Distance > YG2.saves.bestDistance)
+                YG2.saves.bestDistance = _scoreManager.Distance;
+            
+            var endScreen = _screenManager.Open<EndScreen>(ScreenIds.EndScreen);
+            endScreen.Setup(_scoreManager.Score, _scoreManager.Distance, 1000, YG2.saves.bestScore, YG2.saves.bestDistance);
+            
             IsPlaying = false;
             OnGameOver?.Invoke();
             YG2.SaveProgress();

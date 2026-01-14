@@ -1,13 +1,17 @@
+using Southbyte.AdsSystem;
+using Southbyte.CurrenciesSystem;
 using Southbyte.LevelGenerationSystem;
 using Southbyte.RaceSystem;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 using Zenject;
 
 namespace Southbyte.ScreensSystem
 {
     public class EndScreen : ScreenBase
     {
+        [SerializeField] private RaceResultView _raceResultView;
         [SerializeField] private Button _adsButton;
         [SerializeField] private Button _menuButton;
         [SerializeField] private Button _playButton;
@@ -17,6 +21,11 @@ namespace Southbyte.ScreensSystem
         [Inject] private LevelGenerator _levelGenerator;
         [Inject] private ShowcaseController _showcaseController;
         [Inject] private TrafficSpawner _trafficSpawner;
+        [Inject] private AdManager _adManager;
+        [Inject] private CurrenciesManager _currenciesManager;
+        
+        private int _money;
+        private bool _rewardReceived;
         
         public override string Id => ScreenIds.EndScreen;
         
@@ -30,9 +39,39 @@ namespace Southbyte.ScreensSystem
         }
         
         
+        public override void Close()
+        {
+            base.Close();
+            YG2.SaveProgress();
+        }
+        
+        public void Setup(float score, float distance, int money, float bestScore, float bestDistance)
+        {
+            _adsButton.gameObject.SetActive(true);
+            _money = money;
+            _raceResultView.Setup(score, distance, _money, bestScore, bestDistance);
+        }
+        
+        
+        private void RewardIfNeed()
+        {
+            if(!_rewardReceived && _money > 0)
+            {
+                _currenciesManager.ChangeCurrency(CurrencyType.Money, _money);
+            }
+            
+            _rewardReceived = false;
+        }
+        
         private void OnAdsButtonClick()
         {
-            
+            _adsButton.gameObject.SetActive(false);
+            _adManager.ShowRewardedVideoAd(() =>
+            {
+                _rewardReceived = true;
+                var reward = _money * 2;
+                _currenciesManager.ChangeCurrency(CurrencyType.Money, reward);
+            });
         }
         
         private void OnMenuButtonClick()
@@ -42,12 +81,14 @@ namespace Southbyte.ScreensSystem
             _levelGenerator.SetLevelActive(false);
             Camera.main.gameObject.SetActive(false);
             
+            RewardIfNeed();
             Close();
             _screenManager.Open<MainScreen>(ScreenIds.MainScreen);
         }
         
         private void OnPlayButtonClick()
         {
+            RewardIfNeed();
             Close();
             _gameManager.Restart();
         }
