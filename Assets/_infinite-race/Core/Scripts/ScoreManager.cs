@@ -34,7 +34,6 @@ namespace Southbyte
         
         public void AddScore(int score)
         {
-            Debug.LogError(score);
             _score += score;
         }
         

@@ -18,7 +18,10 @@ namespace Southbyte.RaceSystem
             
             var d = Vector3.Distance(transform.position, other.transform.position);
             if (d <= MissDistance)
+            {
                 _scoreManager.AddScore(MissScore);
+                FindFirstObjectByType<CloseMissBonusText>().Show(MissScore);
+            }
         }
     }
 }
