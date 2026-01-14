@@ -9,7 +9,7 @@ namespace Southbyte.RaceSystem
         [Inject] private CarConfigsManager _carConfigsManager;
         [Inject] private IInstantiator _instantiator;
         
-        private CarController _currentCar;
+        private GameObject _currentCar;
         
         
         private void Awake()
@@ -30,7 +30,7 @@ namespace Southbyte.RaceSystem
             if (_currentCar != null)
                 Destroy(_currentCar.gameObject);
             
-            _currentCar = _instantiator.InstantiatePrefabForComponent<CarController>(config.prefab, transform.position, Quaternion.identity, transform);
+            _currentCar = _instantiator.InstantiatePrefab(config.prefab, transform.position, Quaternion.identity, transform);
             Destroy(_currentCar.GetComponent<CarController>());
             _currentCar.transform.localEulerAngles = Vector3.zero;
         }

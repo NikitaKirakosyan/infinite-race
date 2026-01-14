@@ -24,7 +24,6 @@ namespace Southbyte
         {
             _dayNightManager.Toggle();
             _image.color = _dayNightManager.IsNight ? _nightColor : _dayColor;
-            FindFirstObjectByType<CarController>().SetHeadlightsActive(_dayNightManager.IsNight);
         }
     }
 }
