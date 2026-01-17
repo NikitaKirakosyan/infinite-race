@@ -11,7 +11,7 @@ using Zenject;
 namespace Southbyte.AdsSystem
 {
     [EarlyInitialization]
-    public class AdManager : AsyncInitializationServiceBase
+    public class AdsManager : AsyncInitializationServiceBase
     {
         public event Action OnInterstitialAdClosed;
         public event Action OnRewardedVideoAdClosed;
@@ -32,7 +32,7 @@ namespace Southbyte.AdsSystem
         public bool IsAdShowingAllowed { get; private set; } = true;
         
         
-        ~AdManager()
+        ~AdsManager()
         {
             _storeManager.OnPurchaseSuccess -= OnPurchaseSuccessCallback;
         }

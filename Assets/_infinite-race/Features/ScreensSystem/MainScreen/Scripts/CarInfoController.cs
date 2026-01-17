@@ -35,7 +35,7 @@ namespace Southbyte
         
         public void Refresh(CarConfig c, CarProgress p)
         {
-            _carNameText.text = c.carId;
+            _carNameText.text = c.carNameLocalizationKey;
             
             _maxSpeedView.Setup(CarStatsResolver.MaxSpeed(c, p), c.maxMaxSpeed);
             _powerView.Setup(CarStatsResolver.Power(c, p), c.maxPower);

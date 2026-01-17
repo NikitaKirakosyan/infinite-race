@@ -21,7 +21,7 @@ namespace Southbyte.ScreensSystem
         [Inject] private LevelGenerator _levelGenerator;
         [Inject] private ShowcaseController _showcaseController;
         [Inject] private TrafficSpawner _trafficSpawner;
-        [Inject] private AdManager _adManager;
+        [Inject] private AdsManager _adsManager;
         [Inject] private CurrenciesManager _currenciesManager;
         
         private int _money;
@@ -66,7 +66,7 @@ namespace Southbyte.ScreensSystem
         private void OnAdsButtonClick()
         {
             _adsButton.gameObject.SetActive(false);
-            _adManager.ShowRewardedVideoAd(() =>
+            _adsManager.ShowRewardedVideoAd(() =>
             {
                 _rewardReceived = true;
                 var reward = _money * 2;

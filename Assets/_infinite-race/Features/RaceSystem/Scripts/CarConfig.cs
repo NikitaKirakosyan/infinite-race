@@ -8,6 +8,8 @@ namespace Southbyte.RaceSystem
         public const float MinSpeed = 18f;
         
         public string carId;
+        public string carNameLocalizationKey;
+        public int price = 1000;
         public GameObject prefab;
         
         [Header("Base Stats")]

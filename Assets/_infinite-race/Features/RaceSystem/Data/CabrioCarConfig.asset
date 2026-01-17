@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: CabrioCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: cabrio_car
+  carNameLocalizationKey: cabrio_car_name
+  price: 5000
   prefab: {fileID: 7654369706139800605, guid: 739dce61952b5624d9b547ee31f850f7, type: 3}
-  baseMaxSpeed: 40
+  baseMaxSpeed: 90
   basePower: 10
   baseBrake: 10
   baseHandling: 5
-  laneLimit: 4
   maxMaxSpeed: 100
   maxPower: 20
   maxBrake: 30
@@ -27,4 +28,4 @@ MonoBehaviour:
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 1
+  scoreMultiplier: 1.5

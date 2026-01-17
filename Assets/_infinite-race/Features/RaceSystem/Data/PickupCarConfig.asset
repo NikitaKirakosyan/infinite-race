@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: PickupCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: pickup_car
+  carNameLocalizationKey: pickup_car_name
+  price: 1000
   prefab: {fileID: 8018424140572277383, guid: 88c873a865ebab3459fe926b71eab9b1, type: 3}
-  baseMaxSpeed: 40
+  baseMaxSpeed: 20
   basePower: 10
   baseBrake: 10
   baseHandling: 5
-  laneLimit: 4
-  maxMaxSpeed: 100
+  maxMaxSpeed: 60
   maxPower: 20
   maxBrake: 30
   maxHandling: 10
