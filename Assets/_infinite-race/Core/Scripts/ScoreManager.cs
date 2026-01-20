@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Southbyte.DIConfiguration;
 using Southbyte.RaceSystem;
@@ -14,6 +15,10 @@ namespace Southbyte
         private float _scoreMultiplier = 1f;
         private int _score;
         
+        protected override List<Task> DependentServices => new List<Task>()
+        {
+            _gameManager.InitializationTask,
+        };
         public CarController player => Object.FindFirstObjectByType<CarController>();
         public float Distance => player ? player.transform.position.z : 0;
         public int Score => Mathf.FloorToInt(Distance * _scoreMultiplier) + Mathf.FloorToInt(_score * _scoreMultiplier);
