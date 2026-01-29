@@ -25,5 +25,20 @@ namespace Southbyte
             _nextValueSlider.gameObject.SetActive(false);
             _buyButton.gameObject.SetActive(false);
         }
+        
+        public void Setup(float currentValue, float maxValue, float price, float nextValue)
+        {
+            Setup(currentValue, maxValue);
+            
+            _priceText.gameObject.SetActive(true);
+            _priceText.text = $"${price}";
+            
+            _nextValueSlider.gameObject.SetActive(true);
+            _nextValueSlider.minValue = 0;
+            _nextValueSlider.maxValue = maxValue;
+            _nextValueSlider.value = nextValue;
+            
+            _buyButton.gameObject.SetActive(true);
+        }
     }
 }

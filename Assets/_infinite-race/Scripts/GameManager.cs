@@ -1,14 +1,19 @@
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Southbyte.CurrenciesSystem;
+using Southbyte.DIConfiguration;
 using Southbyte.RaceSystem;
 using Southbyte.ScreensSystem;
 using UnityEngine;
 using YG;
 using Zenject;
+using Object = UnityEngine.Object;
 
 namespace Southbyte
 {
-    public class GameManager : MonoBehaviour
+    [EarlyInitialization]
+    public class GameManager : AsyncInitializationServiceBase, IInitializable
     {
         public event Action OnGameStarted;
         public event Action OnGameOver;
@@ -17,19 +22,30 @@ namespace Southbyte
         public event Action OnGameRestarted;
         public event Action OnGameBraked;
         
-        [SerializeField] private Camera _mainCamera;
+        private Camera _mainCamera;
         
         [Inject] private CurrenciesManager _currenciesManager;
         [Inject] private ScoreManager _scoreManager;
         
         private ScreenManager _screenManager;
+        protected override List<Task> DependentServices => new List<Task>()
+        {
+            _currenciesManager.InitializationTask,
+        };
         
         public bool IsPlaying { get; private set; }
         
         
-        private void Awake()
+        void IInitializable.Initialize()
         {
+            _mainCamera = Camera.main;
             _mainCamera.gameObject.SetActive(false);
+        }
+        
+        public override async Task StartInitializationAsync()
+        {
+            await base.StartInitializationAsync();
+            TrySetInitializationResult(true);
         }
         
         private void OnApplicationFocus(bool hasFocus)
@@ -77,7 +93,7 @@ namespace Southbyte
         
         public void Restart()
         {
-            FindFirstObjectByType<CarSpawner>().transform.position = Vector3.zero;
+            Object.FindFirstObjectByType<CarSpawner>().transform.position = Vector3.zero;
             
             Time.timeScale = 1;
             IsPlaying = true;

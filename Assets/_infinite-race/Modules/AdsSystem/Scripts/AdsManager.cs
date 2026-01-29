@@ -42,7 +42,6 @@ namespace Southbyte.AdsSystem
         {
             await base.StartInitializationAsync();
             Init();
-            await InitializationTask;
         }
         
         

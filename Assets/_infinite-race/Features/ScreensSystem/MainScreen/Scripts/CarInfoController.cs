@@ -33,14 +33,15 @@ namespace Southbyte
         }
         
         
-        public void Refresh(CarConfig c, CarProgress p)
+        public void Refresh(CarConfig carConfig, CarProgress progress)
         {
-            _carNameText.text = c.carNameLocalizationKey;
+            if(_carNameText)
+                _carNameText.text = carConfig.carNameLocalizationKey;
             
-            _maxSpeedView.Setup(CarStatsResolver.MaxSpeed(c, p), c.maxMaxSpeed);
-            _powerView.Setup(CarStatsResolver.Power(c, p), c.maxPower);
-            _brakeView.Setup(CarStatsResolver.Brake(c, p), c.maxBrake);
-            _handlingView.Setup(CarStatsResolver.Handling(c, p), c.maxHandling);
+            _maxSpeedView.Setup(CarStatsResolver.MaxSpeed(carConfig, progress), carConfig.maxMaxSpeed);
+            _powerView.Setup(CarStatsResolver.Power(carConfig, progress), carConfig.maxPower);
+            _brakeView.Setup(CarStatsResolver.Brake(carConfig, progress), carConfig.maxBrake);
+            _handlingView.Setup(CarStatsResolver.Handling(carConfig, progress), carConfig.maxHandling);
         }
         
         

@@ -42,17 +42,7 @@ namespace Southbyte.DIConfiguration
                 
                 foreach (var service in asyncServices)
                 {
-#if !PROD
-                    tasks.Add(service.StartInitializationAsync().ContinueWith(t =>
-                    {
-                        var exception = t.Exception?.InnerException ?? t.Exception;
-                        if (exception != null)
-                            throw exception;
-                        LogStatus(asyncServices);
-                    }));
-#else
                     tasks.Add(service.StartInitializationAsync());
-#endif
                 }
                 
                 UpdateLoadingScreenProgress(tasks);

@@ -711,7 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.DIConfiguration.MainSceneInstaller
   _managersFacadePrefab: {fileID: 2732888652206688559, guid: 8586755924dd53840a3d77e2c4c65353, type: 3}
-  _gameManager: {fileID: 875523480}
   _eventSystem: {fileID: 113829726}
   _uiLayers: {fileID: 989237247}
   _audioManager: {fileID: 62354836}
@@ -1256,7 +1255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &517302955
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2335,51 +2334,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6901950802812732339, guid: 8869b61d5d7f6834b8e0bdaf45183c83, type: 3}
   m_PrefabInstance: {fileID: 871461073}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &875523479
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 875523481}
-  - component: {fileID: 875523480}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &875523480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875523479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b79bc76b3bd5d40ae836465742d7df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.GameManager
-  _mainCamera: {fileID: 517302956}
---- !u!4 &875523481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875523479}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &880667228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5175,7 +5129,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 875523481}
   - {fileID: 521258386}
   - {fileID: 1405306990}
   - {fileID: 748140936}

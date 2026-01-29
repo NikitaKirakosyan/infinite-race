@@ -12,7 +12,6 @@ namespace Southbyte.DIConfiguration
     public class MainSceneInstaller : MonoInstaller
     {
         [SerializeField] private ManagersFacade _managersFacadePrefab;
-        [SerializeField] private GameManager _gameManager;
         [SerializeField] private EventSystem _eventSystem;
         [SerializeField] private UILayers _uiLayers;
         [SerializeField] private AudioManager _audioManager;
@@ -27,7 +26,6 @@ namespace Southbyte.DIConfiguration
         {
             Container.BindFactory<ManagersFacade, ManagersFacade.Factory>().FromSubContainerResolve().ByNewContextPrefab(_managersFacadePrefab);
             
-            Container.BindInstance(_gameManager).AsSingle().NonLazy();
             Container.BindInstance(_eventSystem).AsSingle().NonLazy();
             Container.BindInstance(_uiLayers).AsSingle().NonLazy();
             Container.BindInstance(_audioManager).AsSingle().NonLazy();

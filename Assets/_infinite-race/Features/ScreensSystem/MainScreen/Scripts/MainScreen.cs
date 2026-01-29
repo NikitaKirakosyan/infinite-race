@@ -1,4 +1,3 @@
-using NKLogger;
 using UnityEngine;
 using Zenject;
 
@@ -23,18 +22,8 @@ namespace Southbyte.ScreensSystem
         
         public void SelectTab(TabType tabType)
         {
-            switch(tabType)
-            {
-                case TabType.MainTab:
-                    _mainTab.gameObject.SetActive(true);
-                    break;
-                
-                case TabType.TuningTab:
-                    _tuningTab.gameObject.SetActive(true);
-                    break;
-            }
-            
-            DebugPro.LogError($"Unexpected tab type {tabType}!");
+            _mainTab.gameObject.SetActive(tabType == TabType.MainTab);
+            _tuningTab.gameObject.SetActive(tabType == TabType.TuningTab);
         }
         
         
