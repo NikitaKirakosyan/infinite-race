@@ -9,6 +9,7 @@ namespace Southbyte.RaceSystem
     public class TrafficSpawner : MonoBehaviour
     {
         [Inject] private GameManager _gameManager;
+        [Inject] private IInstantiator _instantiator;
         
         public Transform player;
         public TrafficCar[] trafficPrefabs;
@@ -63,7 +64,7 @@ namespace Southbyte.RaceSystem
                 pos += Vector3.forward * 40f;
             
             pos.x = x;
-            var car = Instantiate(trafficPrefabs[Random.Range(0, trafficPrefabs.Length)], pos, Quaternion.identity);
+            var car = _instantiator.InstantiatePrefabForComponent<TrafficCar>(trafficPrefabs[Random.Range(0, trafficPrefabs.Length)], pos, Quaternion.identity, null);
             
             var tc = car.GetComponent<TrafficCar>();
             tc.IsOncoming = oncoming;

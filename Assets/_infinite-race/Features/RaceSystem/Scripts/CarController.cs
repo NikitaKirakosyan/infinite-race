@@ -171,6 +171,9 @@ namespace Southbyte.RaceSystem
         
         private void OnCollisionEnter(Collision other)
         {
+            if(!_gameManager.IsPlaying)
+                return;
+            
             _gameManager.GameOver();
             FindFirstObjectByType<CameraController>().LateFly();
         }

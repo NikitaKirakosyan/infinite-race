@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 5546996485704850661}
   m_Layer: 0
   m_Name: Car_Bus_School_Modern
-  m_TagString: Untagged
+  m_TagString: Traffic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 3106687417646937277}
   m_Layer: 0
   m_Name: Car_Taxi_Modern
-  m_TagString: Untagged
+  m_TagString: Traffic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1212,7 +1212,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 2, z: 5.75}
+  m_Size: {x: 2.35, y: 2, z: 5.75}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &8816210316007928665
 GameObject:

@@ -1560,6 +1560,7 @@ MonoBehaviour:
   _adsButton: {fileID: 7495211373307610759}
   _menuButton: {fileID: 8041994638922064840}
   _playButton: {fileID: 4744380518714551353}
+  _adsButtonText: {fileID: 13283208639714234}
 --- !u!1 &7196906901462919370
 GameObject:
   m_ObjectHideFlags: 0

@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 2530085405676741456}
   m_Layer: 0
   m_Name: Car_Roadster_Cabrio_Modern
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

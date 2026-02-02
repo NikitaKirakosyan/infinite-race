@@ -17,7 +17,7 @@ MonoBehaviour:
   price: 5000
   prefab: {fileID: 7654369706139800605, guid: 739dce61952b5624d9b547ee31f850f7, type: 3}
   baseMaxSpeed: 90
-  basePower: 10
+  basePower: 30
   baseBrake: 10
   baseHandling: 5
   maxMaxSpeed: 100

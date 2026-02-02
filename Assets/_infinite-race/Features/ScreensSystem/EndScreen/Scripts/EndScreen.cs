@@ -2,6 +2,7 @@ using Southbyte.AdsSystem;
 using Southbyte.CurrenciesSystem;
 using Southbyte.LevelGenerationSystem;
 using Southbyte.RaceSystem;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
@@ -15,6 +16,7 @@ namespace Southbyte.ScreensSystem
         [SerializeField] private Button _adsButton;
         [SerializeField] private Button _menuButton;
         [SerializeField] private Button _playButton;
+        [SerializeField] private TextMeshProUGUI _adsButtonText;
         
         [Inject] private GameManager _gameManager;
         [Inject] private ScreenManager _screenManager;
@@ -48,6 +50,7 @@ namespace Southbyte.ScreensSystem
         public void Setup(float score, float distance, int money, float bestScore, float bestDistance)
         {
             _adsButton.gameObject.SetActive(true);
+            _adsButtonText.text = $"X2 REWARD (+${money * 2})";
             _money = money;
             _raceResultView.Setup(score, distance, _money, bestScore, bestDistance);
         }
