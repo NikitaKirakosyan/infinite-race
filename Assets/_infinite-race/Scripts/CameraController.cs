@@ -15,11 +15,13 @@ namespace Southbyte
         
         [Inject] private GameManager _gameManager;
         
+        private Coroutine _lateFlyRoutine;
+        
         
         private void Awake()
         {
-            _gameManager.OnGameStarted += StopAllCoroutines;
-            _gameManager.OnGameOver += StopAllCoroutines;
+            _gameManager.OnGameStarted += ResetLateFly;
+            _gameManager.OnGameOver += ResetLateFly;
             
             if(_target && _autoPosition)
                 _offsetPosition = _target.position - transform.position;
@@ -27,7 +29,7 @@ namespace Southbyte
         
         private void LateUpdate()
         {
-            if(!_target)
+            if(!_target || _lateFlyRoutine != null)
                 return;
             
             var targetPosition = _target.position - _offsetPosition;
@@ -42,9 +44,16 @@ namespace Southbyte
         
         public void LateFly()
         {
-            StartCoroutine(LateFlyRoutine());
+            ResetLateFly();
+            _lateFlyRoutine = StartCoroutine(LateFlyRoutine());
         }
         
+        
+        private void ResetLateFly()
+        {
+            StopAllCoroutines();
+            _lateFlyRoutine = null;
+        }
         
         private IEnumerator LateFlyRoutine()
         {

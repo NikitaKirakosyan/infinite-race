@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 namespace Southbyte
 {
     [EarlyInitialization]
-    public class GameManager : AsyncInitializationServiceBase, IInitializable
+    public class GameManager : AsyncInitializationServiceBase, IInitializable, ITickable
     {
         public event Action OnGameStarted;
         public event Action OnGameOver;
@@ -27,7 +27,30 @@ namespace Southbyte
         [Inject] private CurrenciesManager _currenciesManager;
         [Inject] private ScoreManager _scoreManager;
         
+        private float _timer;
+        private float _passedSeconds;
+        private GameMode currentMode;
+        private GameModeConfig modeConfig;
+        private CarController car;
         private ScreenManager _screenManager;
+        
+        public float Timer => _timer;
+        
+        public float RemainedTimer
+        {
+            get
+            {
+                if(CurrentMode == GameMode.TimeAttack)
+                {
+                    return modeConfig.timeLimit - _timer;
+                }
+                
+                return 0;
+            }
+        }
+        public GameMode CurrentMode => currentMode;
+        
+        
         protected override List<Task> DependentServices => new List<Task>()
         {
             _currenciesManager.InitializationTask,
@@ -41,6 +64,28 @@ namespace Southbyte
             _mainCamera = Camera.main;
             _mainCamera.gameObject.SetActive(false);
         }
+        
+        void ITickable.Tick()
+        {
+            if(!IsPlaying)
+                return;
+            
+            switch (currentMode)
+            {
+                case GameMode.CrashUntil:
+                    UpdateCrashUntil();
+                    break;
+                
+                case GameMode.TimeAttack:
+                    UpdateTimeAttack();
+                    break;
+                
+                case GameMode.Endless:
+                    UpdateEndless();
+                    break;
+            }
+        }
+        
         
         public override async Task StartInitializationAsync()
         {
@@ -65,6 +110,8 @@ namespace Southbyte
             if(_screenManager.TryGetScreen<EndScreen>(ScreenIds.EndScreen, out var screen))
                 screen.Close();
             
+            _timer = 0;
+            _passedSeconds = 0;
             _mainCamera.gameObject.SetActive(true);
             IsPlaying = true;
             OnGameStarted?.Invoke();
@@ -120,6 +167,53 @@ namespace Southbyte
             Time.timeScale = 1;
             IsPlaying = false;
             OnGameBraked?.Invoke();
+        }
+        
+        public void SetMode(int modeIndex)
+        {
+            currentMode = (GameMode)modeIndex;
+            modeConfig = GameModeConfig.GetConfig(currentMode);
+        }
+        
+        
+        private void UpdateCrashUntil()
+        {
+            _passedSeconds += Time.deltaTime;
+            
+            if(_passedSeconds >= 1f)
+            {
+                _scoreManager.AddScore(modeConfig.scorePerSecond);
+                _passedSeconds = 0;
+            }
+        }
+
+        
+        private void UpdateTimeAttack()
+        {
+            _timer += Time.deltaTime;
+            _passedSeconds += Time.deltaTime;
+            
+            if(_passedSeconds >= 1f)
+            {
+                _scoreManager.AddScore(modeConfig.scorePerSecond);
+                _passedSeconds = 0;
+            }
+            
+            if (_timer >= modeConfig.timeLimit)
+            {
+                GameOver();
+            }
+        }
+        
+        private void UpdateEndless()
+        {
+            _passedSeconds += Time.deltaTime;
+            
+            if(_passedSeconds >= 1f)
+            {
+                _scoreManager.AddScore(modeConfig.scorePerSecond);
+                _passedSeconds = 0;
+            }
         }
     }
 }

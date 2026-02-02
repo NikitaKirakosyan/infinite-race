@@ -14,6 +14,7 @@ namespace Southbyte.ScreensSystem
             { ScreenIds.MainScreen, $"Screens/{ScreenIds.MainScreen}" },
             { ScreenIds.EndScreen, $"Screens/{ScreenIds.EndScreen}" },
             { ScreenIds.PauseScreen, $"Screens/{ScreenIds.PauseScreen}" },
+            { ScreenIds.GameModeScreen, $"Screens/{ScreenIds.GameModeScreen}" },
             //Popups
             { ScreenIds.AuthorizationPopup, $"Popups/{ScreenIds.AuthorizationPopup}" },
             { ScreenIds.RateUsPopup, $"Popups/{ScreenIds.RateUsPopup}" },

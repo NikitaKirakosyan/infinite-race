@@ -172,8 +172,6 @@ namespace Southbyte.RaceSystem
         private void OnCollisionEnter(Collision other)
         {
             _gameManager.GameOver();
-            Destroy(gameObject);
-            
             FindFirstObjectByType<CameraController>().LateFly();
         }
         
@@ -215,9 +213,6 @@ namespace Southbyte.RaceSystem
         private void OnGameOver()
         {
             StopEngine();
-            transform.root.position = Vector3.zero;
-            transform.root.localEulerAngles = Vector3.zero;
-            transform.localEulerAngles = Vector3.zero;
         }
         
         private void OnGameResumed()

@@ -7,6 +7,7 @@ namespace Southbyte.ScreensSystem
         public const string MainScreen = nameof(MainScreen);
         public const string EndScreen = nameof(EndScreen);
         public const string PauseScreen = nameof(PauseScreen);
+        public const string GameModeScreen = nameof(GameModeScreen);
         
         //Popups
         public const string AuthorizationPopup = nameof(AuthorizationPopup);

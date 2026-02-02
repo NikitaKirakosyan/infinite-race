@@ -42,6 +42,9 @@ namespace Southbyte.LevelGenerationSystem
         {
             var tile = Instantiate(roadTiles.GetRandomElement(), Vector3.forward * spawnZ, Quaternion.identity);
             tile.transform.SetParent(_container);
+            var pos = tile.transform.localPosition;
+            pos.x = 0;
+            tile.transform.localPosition = pos;
             
             spawned.Enqueue(tile);
             spawnZ += tileLength;

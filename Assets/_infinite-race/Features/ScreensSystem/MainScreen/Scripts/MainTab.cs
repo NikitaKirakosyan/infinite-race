@@ -75,7 +75,7 @@ namespace Southbyte.ScreensSystem
         private void OnPlayButtonClick()
         {
             _screenManager.Close(ScreenIds.MainScreen);
-            _gameManager.Play();
+            _screenManager.Open(ScreenIds.GameModeScreen);
         }
         
         private void Refresh()

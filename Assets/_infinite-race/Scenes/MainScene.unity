@@ -3303,7 +3303,7 @@ Transform:
   m_GameObject: {fileID: 1281770530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4580,7 +4580,7 @@ MonoBehaviour:
   player: {fileID: 1014270209}
   carSpawner: {fileID: 1014270213}
   roadTiles:
-  - {fileID: 340707555252352917, guid: 250c728e3548d4e77ab706c86f5db0e6, type: 3}
+  - {fileID: 340707555252352917, guid: b915cdac478324bd6a72b6e8e8703c4a, type: 3}
   tileLength: 10
   tilesAhead: 10
 --- !u!4 &1989584998
@@ -4882,13 +4882,18 @@ MonoBehaviour:
   player: {fileID: 1014270209}
   trafficPrefabs:
   - {fileID: 6691748640286828396, guid: 646526c3b494f4055ae0a058e2bc1ae2, type: 3}
+  - {fileID: -2589999169386706458, guid: be8f203d2f1fa44fb9b96c8537da5856, type: 3}
   - {fileID: -3748629925518882022, guid: e95799abfdbfd4c7eabcb3b0a3c4a9e2, type: 3}
   - {fileID: -7758556709672480698, guid: ea823cb666b094e5f8a8e3ec4a41771f, type: 3}
+  - {fileID: -443746378180021143, guid: 38982be6c9176421994aeaf29f276e4c, type: 3}
+  - {fileID: -2449044947357523069, guid: 1a82db6c2837941e99f53f6a92a6b055, type: 3}
+  - {fileID: 4842927080005170198, guid: 7bc5107c06a694a8aae1457b0e25dbf0, type: 3}
+  - {fileID: 7870116183945969415, guid: 9594ee615b518480697ef8361d28c8fb, type: 3}
   carSpawner: {fileID: 1014270213}
-  spawnDistance: 50
-  spawnInterval: 0.5
-  laneOffset: 10
-  lanes: 2
+  spawnDistance: 75
+  spawnInterval: 0.2
+  laneOffset: 4.5
+  lanes: 4
 --- !u!4 &2064355987
 Transform:
   m_ObjectHideFlags: 0

@@ -82,14 +82,14 @@ namespace Southbyte.ScreensSystem
             Camera.main.gameObject.SetActive(false);
             
             RewardIfNeed();
-            Close();
+            _screenManager.Close(ScreenIds.EndScreen);
             _screenManager.Open<MainScreen>(ScreenIds.MainScreen);
         }
         
         private void OnPlayButtonClick()
         {
             RewardIfNeed();
-            Close();
+            _screenManager.Close(ScreenIds.EndScreen);
             _gameManager.Restart();
         }
     }
