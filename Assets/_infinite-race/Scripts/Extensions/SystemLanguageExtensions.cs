@@ -12,21 +12,6 @@ namespace Southbyte
                 case SystemLanguage.Russian:
                     return LanguageCodes.RuCode;
 
-                case SystemLanguage.French:
-                    return LanguageCodes.FrCode;
-
-                case SystemLanguage.German:
-                    return LanguageCodes.DeCode;
-
-                case SystemLanguage.Italian:
-                    return LanguageCodes.ItCode;
-
-                case SystemLanguage.Spanish:
-                    return LanguageCodes.EsCode;
-
-                case SystemLanguage.Turkish:
-                    return LanguageCodes.TrCode;
-
                 default:
                     return LanguageCodes.EnCode;
             }

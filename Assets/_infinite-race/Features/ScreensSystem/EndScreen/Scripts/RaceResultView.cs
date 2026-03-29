@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using Southbyte.LocalizationSystem;
 using TMPro;
 using UnityEngine;
 
@@ -22,6 +23,11 @@ namespace Southbyte.ScreensSystem
         private Color _moneyColor;
         private Color _bestScoreColor;
         private Color _bestDistanceColor;
+        private string _score;
+        private string _distance;
+        private string _money;
+        private string _bestScore;
+        private string _bestDistance;
         
         
         private void Awake()
@@ -44,15 +50,25 @@ namespace Southbyte.ScreensSystem
             _bestScoreText.color = Color.clear;
             _bestDistanceText.color = Color.clear;
             
-            _scoreText.text = $"Score: {score:0}";
-            _distanceText.text = $"Distance: {distance:0.00}m";
-            _moneyText.text = $"Money: ${money:0}";
-            _bestScoreText.text = $"Best score: {bestScore:0}";
-            _bestDistanceText.text = $"Best distance: {bestDistance:0.00}m";
+            _score = $"{score:0}";
+            _distance = $"{distance:0.00}m";
+            _money = $"${money:0}";
+            _bestScore = $"{bestScore:0}";
+            _bestDistance = $"{bestDistance:0.00}m";
             
+            Refresh();
             StartCoroutine(ColorizeTextsRoutine());
         }
         
+        
+        private void Refresh()
+        {
+            _scoreText.text = LocalizationKeys.Score.Localize("num", _score);
+            _distanceText.text = LocalizationKeys.Distance.Localize("num", _distance);
+            _moneyText.text = LocalizationKeys.Money.Localize("num", _money);
+            _bestScoreText.text = LocalizationKeys.BestScore.Localize("num", _bestScore);
+            _bestDistanceText.text = LocalizationKeys.BestDistance.Localize("num", _bestDistance);
+        }
         
         private IEnumerator ColorizeTextsRoutine()
         {

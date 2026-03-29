@@ -1,3 +1,4 @@
+using Southbyte.LocalizationSystem;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -18,7 +19,8 @@ namespace Southbyte
         
         private void LateUpdate()
         {
-            _text.text = $"Distance: {_scoreManager.Distance:0}m";
+            var distance = $"{_scoreManager.Distance:0}m";
+            _text.text = LocalizationKeys.Distance.Localize("num", distance);
         }
     }
 }

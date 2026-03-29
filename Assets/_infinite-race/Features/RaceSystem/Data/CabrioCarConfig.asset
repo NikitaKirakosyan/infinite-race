@@ -19,7 +19,7 @@ MonoBehaviour:
   baseMaxSpeed: 90
   basePower: 30
   baseBrake: 10
-  baseHandling: 5
+  baseHandling: 7
   maxMaxSpeed: 100
   maxPower: 20
   maxBrake: 30

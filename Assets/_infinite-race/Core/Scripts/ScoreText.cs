@@ -1,3 +1,4 @@
+using Southbyte.LocalizationSystem;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -18,7 +19,7 @@ namespace Southbyte
         
         private void LateUpdate()
         {
-            _text.text = $"Score: {_scoreManager.Score}";
+            _text.text = LocalizationKeys.Score.Localize("num", _scoreManager.Score);
         }
     }
 }

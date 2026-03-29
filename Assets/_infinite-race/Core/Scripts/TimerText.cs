@@ -1,3 +1,4 @@
+using Southbyte.LocalizationSystem;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -30,7 +31,8 @@ namespace Southbyte
                 return;
             }
             
-            _text.text = $"Timer: {_gameManager.RemainedTimer:0}";
+            var timer = $"{_gameManager.RemainedTimer:0}";
+            _text.text = LocalizationKeys.Timer.Localize("num", timer);
         }
         
         

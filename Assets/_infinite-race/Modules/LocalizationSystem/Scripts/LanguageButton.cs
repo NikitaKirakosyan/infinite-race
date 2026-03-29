@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Globalization;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -10,22 +8,17 @@ namespace Southbyte.LocalizationSystem
     public class LanguageButton : MonoBehaviour
     {
         [SerializeField] private Button _button;
-        [SerializeField] private TextMeshProUGUI _buttonText;
+        [SerializeField] private Image _buttonImage;
+        [SerializeField] private List<Sprite> _languageIcons;
         
         [Inject] private LocalizationManager _localizationManager;
         
         private int _languageIndex;
-        private readonly List<string> _languageOptions = new ();
         
         private readonly string[] _languages = new []
         {
             LanguageCodes.EnCode,
             LanguageCodes.RuCode,
-            LanguageCodes.FrCode,
-            LanguageCodes.DeCode,
-            LanguageCodes.ItCode,
-            LanguageCodes.EsCode,
-            LanguageCodes.TrCode,
         };
         
         
@@ -42,8 +35,6 @@ namespace Southbyte.LocalizationSystem
             for(var i = 0; i < _languages.Length; i++)
             {
                 var langCode = _languages[i];
-                var culture = CultureInfo.GetCultureInfo(langCode);
-                _languageOptions.Add(culture.TextInfo.ToTitleCase(culture.NativeName));
                 
                 if(_languages[i] == currLangCode)
                     _languageIndex = i;
@@ -55,13 +46,13 @@ namespace Southbyte.LocalizationSystem
         
         private void Refresh()
         {
-            _buttonText.text = _languageOptions[_languageIndex];
+            _buttonImage.sprite = _languageIcons[_languageIndex];
         }
         
         private void OnButtonClick()
         {
             _languageIndex++;
-            if(_languageIndex >= _languageOptions.Count)
+            if(_languageIndex >= _languageIcons.Count)
                 _languageIndex = 0;
             
             _localizationManager.SetLanguage(_languages[_languageIndex]);

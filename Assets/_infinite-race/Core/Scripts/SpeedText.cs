@@ -1,3 +1,4 @@
+using Southbyte.LocalizationSystem;
 using Southbyte.RaceSystem;
 using TMPro;
 using UnityEngine;
@@ -30,13 +31,16 @@ namespace Southbyte
                 _carController = FindFirstObjectByType<CarController>();
             
             if(_carController)
-                _text.text = $"Speed: {_carController.CurrentSpeed * 3.6f:0}km/h";
+            {
+                var speed = $"{_carController.CurrentSpeed * 3.6f:0}";
+                _text.text = LocalizationKeys.Speed.Localize("num", speed);
+            }
         }
         
         private void Cleanup()
         {
             _carController = null;
-            _text.text = "Speed: 0";
+            _text.text = LocalizationKeys.Speed.Localize("num", 0);
         }
     }
 }

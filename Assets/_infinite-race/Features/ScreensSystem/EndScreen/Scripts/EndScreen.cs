@@ -1,6 +1,7 @@
 using Southbyte.AdsSystem;
 using Southbyte.CurrenciesSystem;
 using Southbyte.LevelGenerationSystem;
+using Southbyte.LocalizationSystem;
 using Southbyte.RaceSystem;
 using TMPro;
 using UnityEngine;
@@ -50,7 +51,7 @@ namespace Southbyte.ScreensSystem
         public void Setup(float score, float distance, int money, float bestScore, float bestDistance)
         {
             _adsButton.gameObject.SetActive(true);
-            _adsButtonText.text = $"X2 REWARD (+${money * 2})";
+            _adsButtonText.text = LocalizationKeys.X2RewardCaps.Localize("num", money * 2);
             _money = money;
             _raceResultView.Setup(score, distance, _money, bestScore, bestDistance);
         }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Southbyte.LocalizationSystem;
 using TMPro;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace Southbyte
             _text.DOKill();
             _text.color = _color;
             _text.rectTransform.anchoredPosition = new Vector2(0, -100);
-            _text.text = $"CLOSE MISS!\nBONUS SCORE +{value}";
+            _text.text = LocalizationKeys.CloseMissCaps.Localize("num", value);
             _text.DOFade(0, 0.5f).SetDelay(0.5f).SetLink(_text.gameObject).OnComplete(() => _text.rectTransform.anchoredPosition = new Vector2(0, 400));
         }
     }

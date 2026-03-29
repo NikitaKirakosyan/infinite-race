@@ -12,7 +12,7 @@ namespace Southbyte.LocalizationSystem
 {
     public static class LocalizationGenerator
     {
-        private const string WorksheetName = "Main";
+        private const string WorksheetName = "Sheet1";
         private const string LocalizationAssetName = "LocalizationData.json";
 
         private static readonly string LocalizationLocalDirectoryPath = Path.Combine(Application.dataPath, "Resources/LocalizationData");

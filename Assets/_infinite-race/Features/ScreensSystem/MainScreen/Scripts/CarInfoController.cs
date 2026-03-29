@@ -1,3 +1,4 @@
+using Southbyte.LocalizationSystem;
 using Southbyte.RaceSystem;
 using Southbyte.ScreensSystem;
 using TMPro;
@@ -36,7 +37,7 @@ namespace Southbyte
         public void Refresh(CarConfig carConfig, CarProgress progress)
         {
             if(_carNameText)
-                _carNameText.text = carConfig.carNameLocalizationKey;
+                _carNameText.text = carConfig.carNameLocalizationKey.Localize();
             
             _maxSpeedView.Setup(CarStatsResolver.MaxSpeed(carConfig, progress), carConfig.maxMaxSpeed);
             _powerView.Setup(CarStatsResolver.Power(carConfig, progress), carConfig.maxPower);

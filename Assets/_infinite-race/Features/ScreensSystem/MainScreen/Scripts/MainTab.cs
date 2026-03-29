@@ -1,7 +1,9 @@
 using System;
 using Southbyte.AdsSystem;
 using Southbyte.CurrenciesSystem;
+using Southbyte.LocalizationSystem;
 using Southbyte.RaceSystem;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
@@ -19,18 +21,27 @@ namespace Southbyte.ScreensSystem
         [SerializeField] private Button _tuningButton;
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _testDriveButton;
+        [SerializeField] private TextMeshProUGUI _buyButtonText;
         
         [Inject] private GameManager _gameManager;
         [Inject] private CarConfigsManager _carConfigsManager;
         [Inject] private CurrenciesManager _currenciesManager;
         [Inject] private AdsManager _adsManager;
+        [Inject] private LocalizationManager _localizationManager;
         
         public static int SelectedCarIndex;
         
         
+        private void OnDestroy()
+        {
+            _localizationManager.OnLanguageChanged -= Refresh;
+        }
+        
         protected override void Awake()
         {
             base.Awake();
+            
+            _localizationManager.OnLanguageChanged += Refresh;
             
             _playButton.onClick.AddListener(OnPlayButtonClick);
             _previousCarButton.onClick.AddListener(PreviousCar);
@@ -87,6 +98,7 @@ namespace Southbyte.ScreensSystem
             _testDriveButton.gameObject.SetActive(!isCarPurchased);
             _buyButton.gameObject.SetActive(!isCarPurchased);
             _buyButton.interactable = _currenciesManager.GetCurrency(CurrencyType.Money) >= selectedCar.price;
+            _buyButtonText.text = LocalizationKeys.BuyForCaps.Localize("num", selectedCar.price.ToString());
         }
         
         private void PreviousCar()
