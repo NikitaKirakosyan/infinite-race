@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 3900752284689738167}
   - component: {fileID: 8576091330942417720}
   - component: {fileID: 257016078494696190}
+  - component: {fileID: 5632192361488646126}
   m_Layer: 0
   m_Name: LoadingText
   m_TagString: Untagged
@@ -420,6 +421,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &5632192361488646126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226388462806552212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b96987079c5c94dab6426f6fe716e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.LocalizationSystem.TextLocalizer
+  _text: {fileID: 8576091330942417720}
+  _localizationKey: loading_label
+  _localizeOnAwake: 1
 --- !u!1 &8684727043577773290
 GameObject:
   m_ObjectHideFlags: 0

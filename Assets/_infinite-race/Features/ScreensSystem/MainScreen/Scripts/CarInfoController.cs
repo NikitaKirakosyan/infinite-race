@@ -17,20 +17,21 @@ namespace Southbyte
         
         [Inject] private CarProgressManager _carProgressManager;
         [Inject] private CarConfigsManager _carConfigsManager;
+        [Inject] private LocalizationManager _localizationManager;
         
         
         private void Awake()
         {
-            var currentCarConfig = _carConfigsManager.CarConfigs[MainTab.SelectedCarIndex];
-            var currentCarProgress = _carProgressManager.Get(currentCarConfig.carId);
-            Refresh(currentCarConfig, currentCarProgress);
+            RefreshInternal();
             
             MainTab.OnCarIndexChanged += OnCarIndexChanged;
+            _localizationManager.OnLanguageChanged += OnLanguageChanged;
         }
         
         private void OnDestroy()
         {
             MainTab.OnCarIndexChanged -= OnCarIndexChanged;
+            _localizationManager.OnLanguageChanged -= OnLanguageChanged;
         }
         
         
@@ -46,11 +47,21 @@ namespace Southbyte
         }
         
         
-        private void OnCarIndexChanged(int carIndex)
+        private void RefreshInternal()
         {
-            var currentCarConfig = _carConfigsManager.CarConfigs[carIndex];
+            var currentCarConfig = _carConfigsManager.CarConfigs[MainTab.SelectedCarIndex];
             var currentCarProgress = _carProgressManager.Get(currentCarConfig.carId);
             Refresh(currentCarConfig, currentCarProgress);
+        }
+        
+        private void OnCarIndexChanged(int carIndex)
+        {
+            RefreshInternal();
+        }
+        
+        private void OnLanguageChanged()
+        {
+            RefreshInternal();
         }
     }
 }

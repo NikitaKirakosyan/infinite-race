@@ -39,6 +39,7 @@ namespace Southbyte.RaceSystem
         private float _lateralSpeed = 6f;
         
         private CarProgress _carProgress;
+        private MobileInput _mobileInput;
         
         public float CurrentSpeed => _currentSpeed;
         
@@ -58,6 +59,8 @@ namespace Southbyte.RaceSystem
             
             if(_gameManager.IsPlaying)
                 StartEngine();
+            
+            _mobileInput = FindAnyObjectByType<MobileInput>(FindObjectsInactive.Include);
         }
         
         private void OnDestroy()
@@ -76,12 +79,12 @@ namespace Southbyte.RaceSystem
                 return;
             
             // Speed
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) || _mobileInput.IsGasButtonDown)
                 _currentSpeed += _acceleration * Time.deltaTime;
             else
                 _currentSpeed -= _deceleration / 10f * Time.deltaTime;
             
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) ||  _mobileInput.IsBrakeButtonDown)
                 _currentSpeed -= _deceleration * Time.deltaTime;
             
             _currentSpeed = Mathf.Clamp(_currentSpeed, CarConfig.MinSpeed, _maxSpeed);
@@ -91,16 +94,15 @@ namespace Southbyte.RaceSystem
             var targetFov = Mathf.Lerp(40, 80, t);
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, targetFov, 5f * Time.deltaTime);
             
-            // Steering
-            var steer = 0f;
-            
-            if (Input.GetKey(KeyCode.A)) 
-                steer = -1f;
-            
-            if (Input.GetKey(KeyCode.D)) 
-                steer = 1f;
-            
             var steerInput = Input.GetAxis("Horizontal"); // A/D
+            if(_mobileInput)
+            {
+                if(_mobileInput.IsLeftButtonDown)
+                    steerInput = -1f;
+                
+                if(_mobileInput.IsRightButtonDown)
+                    steerInput = 1f;
+            }
             
             //Yaw rotation
             var targetYaw = steerInput * _maxSteerAngle;

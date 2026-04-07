@@ -166,5 +166,20 @@ namespace Southbyte.LocalizationSystem
 		/// CLOSE MISS!\nBONUS SCORE +${num}
 		/// </summary>
 		public const string CloseMissCaps = "close_miss_caps";
+
+		/// <summary>
+		/// CONTINUE
+		/// </summary>
+		public const string ContinueCaps = "continue_caps";
+
+		/// <summary>
+		/// RESTART
+		/// </summary>
+		public const string RestartCaps = "restart_caps";
+
+		/// <summary>
+		/// PAUSE
+		/// </summary>
+		public const string PauseCaps = "pause_caps";
 	}
 }

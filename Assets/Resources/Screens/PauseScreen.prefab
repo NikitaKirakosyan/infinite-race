@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 8836178377619786566}
   - component: {fileID: 9173474330762146943}
   - component: {fileID: 13283208639714234}
+  - component: {fileID: 565710323034114170}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -382,6 +383,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &565710323034114170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592061348625433710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b96987079c5c94dab6426f6fe716e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.LocalizationSystem.TextLocalizer
+  _text: {fileID: 13283208639714234}
+  _localizationKey: restart_caps
+  _localizeOnAwake: 1
 --- !u!1 &4700612123717223594
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +505,7 @@ GameObject:
   - component: {fileID: 1932301726275758707}
   - component: {fileID: 6142439784133715260}
   - component: {fileID: 1592145581033871034}
+  - component: {fileID: 8577006139094115352}
   m_Layer: 0
   m_Name: TitleText
   m_TagString: Untagged
@@ -615,6 +632,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8577006139094115352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5734889723875159844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b96987079c5c94dab6426f6fe716e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.LocalizationSystem.TextLocalizer
+  _text: {fileID: 1592145581033871034}
+  _localizationKey: pause_caps
+  _localizeOnAwake: 1
 --- !u!1 &6058490366637813568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1147,7 @@ GameObject:
   - component: {fileID: 803540186721856658}
   - component: {fileID: 8091266847597115515}
   - component: {fileID: 2850653370965855356}
+  - component: {fileID: 794377878934411542}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1241,6 +1274,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &794377878934411542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570325695566901679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b96987079c5c94dab6426f6fe716e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.LocalizationSystem.TextLocalizer
+  _text: {fileID: 2850653370965855356}
+  _localizationKey: continue_caps
+  _localizeOnAwake: 1
 --- !u!1 &8314443223245175673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1300,7 @@ GameObject:
   - component: {fileID: 4014383755691422194}
   - component: {fileID: 5990521503247538175}
   - component: {fileID: 8386675915100291152}
+  - component: {fileID: 3054058780645848453}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1378,6 +1427,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3054058780645848453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8314443223245175673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b96987079c5c94dab6426f6fe716e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.LocalizationSystem.TextLocalizer
+  _text: {fileID: 8386675915100291152}
+  _localizationKey: menu_caps
+  _localizeOnAwake: 1
 --- !u!1 &8708235434690841046
 GameObject:
   m_ObjectHideFlags: 0

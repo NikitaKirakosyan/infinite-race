@@ -33,7 +33,10 @@
       "cabrio_car_name": "Cabrio",
       "pickup_car_name": "Pickup",
       "police_car_name": "Police car",
-      "close_miss_caps": "CLOSE MISS!\nBONUS SCORE +${num}"
+      "close_miss_caps": "CLOSE MISS!\nBONUS SCORE +${num}",
+      "continue_caps": "CONTINUE",
+      "restart_caps": "RESTART",
+      "pause_caps": "PAUSE"
     },
     "ru": {
       "loading_label": "Загрузка...",
@@ -68,7 +71,10 @@
       "cabrio_car_name": "Кабриолет",
       "pickup_car_name": "Пикап",
       "police_car_name": "Полицейская машина",
-      "close_miss_caps": "БЛИЗКО!\nБОНУС СЧЕТ +${num}"
+      "close_miss_caps": "БЛИЗКО!\nБОНУС СЧЕТ +${num}",
+      "continue_caps": "ПРОДОЛЖИТЬ",
+      "restart_caps": "ЗАНОВО",
+      "pause_caps": "ПАУЗА"
     }
   }
 }
