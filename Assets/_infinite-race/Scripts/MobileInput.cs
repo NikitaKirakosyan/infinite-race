@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 namespace Southbyte
 {
@@ -11,6 +11,8 @@ namespace Southbyte
         [SerializeField] private EventTrigger _brakeButton;
         [SerializeField] private EventTrigger _gasButton;
         
+        [Inject] private GameManager _gameManager;
+        
         public bool IsLeftButtonDown { get; private set; }
         public bool IsRightButtonDown { get; private set; }
         public bool IsBrakeButtonDown { get; private set; }
@@ -19,6 +21,10 @@ namespace Southbyte
         
         private void Awake()
         {
+            _gameManager.OnGameStarted += ResetBools;
+            _gameManager.OnGameOver += ResetBools;
+            _gameManager.OnGameRestarted += ResetBools;
+            
             _leftButton.triggers[0].callback.AddListener(OnLeftButtonDown);
             _leftButton.triggers[1].callback.AddListener(OnLeftButtonUp);
             _rightButton.triggers[0].callback.AddListener(OnRightButtonDown);
@@ -67,6 +73,14 @@ namespace Southbyte
         
         private void OnGasButtonUp(BaseEventData arg0)
         {
+            IsGasButtonDown = false;
+        }
+        
+        private void ResetBools()
+        {
+            IsLeftButtonDown = false;
+            IsRightButtonDown = false;
+            IsBrakeButtonDown = false;
             IsGasButtonDown = false;
         }
     }

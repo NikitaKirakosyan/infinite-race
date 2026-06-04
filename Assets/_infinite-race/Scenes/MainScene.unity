@@ -4890,9 +4890,9 @@ MonoBehaviour:
   - {fileID: 4842927080005170198, guid: 7bc5107c06a694a8aae1457b0e25dbf0, type: 3}
   - {fileID: 7870116183945969415, guid: 9594ee615b518480697ef8361d28c8fb, type: 3}
   carSpawner: {fileID: 1014270213}
-  spawnDistance: 75
-  spawnInterval: 0.2
-  laneOffset: 4.5
+  spawnDistance: 95
+  spawnInterval: 0.55
+  laneOffset: 4.6
   lanes: 4
 --- !u!4 &2064355987
 Transform:
