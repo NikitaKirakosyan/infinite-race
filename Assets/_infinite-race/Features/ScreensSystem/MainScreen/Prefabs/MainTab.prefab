@@ -2433,6 +2433,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264504722707125485, guid: 6a4c16261fc7648dcb7ea2734a2cb540, type: 3}
+      propertyPath: m_text
+      value: 'MAX SPEED:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264504722707125485, guid: 6a4c16261fc7648dcb7ea2734a2cb540, type: 3}
       propertyPath: m_fontSize
       value: 36
       objectReference: {fileID: 0}

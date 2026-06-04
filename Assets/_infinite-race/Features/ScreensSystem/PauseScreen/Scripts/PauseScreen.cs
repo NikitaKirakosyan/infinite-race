@@ -50,6 +50,7 @@ namespace Southbyte.ScreensSystem
         
         private void OnMenuButtonClick()
         {
+            FindFirstObjectByType<HUDController>(FindObjectsInactive.Include).Hide();
             Destroy(FindFirstObjectByType<CarController>().gameObject);
             
             _showcaseController.Show();

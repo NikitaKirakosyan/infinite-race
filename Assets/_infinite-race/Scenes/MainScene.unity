@@ -4581,7 +4581,7 @@ MonoBehaviour:
   carSpawner: {fileID: 1014270213}
   roadTiles:
   - {fileID: 340707555252352917, guid: b915cdac478324bd6a72b6e8e8703c4a, type: 3}
-  tileLength: 10
+  tileLength: 30
   tilesAhead: 10
 --- !u!4 &1989584998
 Transform:

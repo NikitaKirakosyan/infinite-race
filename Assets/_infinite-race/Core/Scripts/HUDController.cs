@@ -34,7 +34,7 @@ namespace Southbyte
             gameObject.SetActive(true);
         }
         
-        private void Hide()
+        public void Hide()
         {
             gameObject.SetActive(false);
         }
