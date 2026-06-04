@@ -1,5 +1,157 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &116808841197826884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4662819378613494938}
+  - component: {fileID: 6669833284594772045}
+  - component: {fileID: 6542963497206422805}
+  - component: {fileID: 2993435754013626313}
+  m_Layer: 0
+  m_Name: CarNameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4662819378613494938
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116808841197826884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8314005107550909513}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 365}
+  m_SizeDelta: {x: -100, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &6669833284594772045
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116808841197826884}
+  m_CullTransparentMesh: 1
+--- !u!114 &6542963497206422805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116808841197826884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Cabrio
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: ffabf6840c513cc49b0633e32cf94931, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 8bf969ec3587e4d9f9145cfd9c2c570f, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2993435754013626313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116808841197826884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &399486298247667560
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,8 +181,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4373738507947816605}
+  - {fileID: 2801155070831952920}
   - {fileID: 2671584344118962004}
+  - {fileID: 4662819378613494938}
   - {fileID: 599200526078070563}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.TuningTab
   _closeButton: {fileID: 1108248537801249254}
+  _carInfoController: {fileID: 1742712899594816279}
 --- !u!1 &2094774036272768093
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,10 +360,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2671584344118962004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -45}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5573488320591912218
 CanvasRenderer:
@@ -351,8 +505,8 @@ MonoBehaviour:
   m_ChildAlignment: 4
   SpacingX: 40
   SpacingY: 40
-  ExpandHorizontalSpacing: 0
-  ChildForceExpandWidth: 0
+  ExpandHorizontalSpacing: 1
+  ChildForceExpandWidth: 1
   ChildForceExpandHeight: 0
   invertOrder: 0
   m_StartAxis: 0
@@ -368,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f68a4da0c4a40aeb52ab3be109d9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoController
-  _carNameText: {fileID: 0}
+  _carNameText: {fileID: 6542963497206422805}
   _maxSpeedView: {fileID: 7649019577858488822}
   _powerView: {fileID: 7198175054931440151}
   _brakeView: {fileID: 6655565104867166144}
@@ -1320,7 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406be5546d8f64079ab1c0dc35c2eb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.CarInfoView
---- !u!1001 &6072240462227741525
+--- !u!1001 &5632312956210555344
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1328,6 +1482,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8314005107550909513}
     m_Modifications:
+    - target: {fileID: 1760312951333290029, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
+      propertyPath: _currencyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6144884430286030006, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_SizeDelta.x
       value: 80
@@ -1335,6 +1493,10 @@ PrefabInstance:
     - target: {fileID: 6144884430286030006, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254992068438583955, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7563317805353512392, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_Pivot.x
@@ -1362,7 +1524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7563317805353512392, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7563317805353512392, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1422,11 +1584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8094079822639072625, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -102
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8094079822639072625, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631908881837200481, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
       propertyPath: m_fontSize
@@ -1437,10 +1599,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
---- !u!224 &4373738507947816605 stripped
+--- !u!224 &2801155070831952920 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7563317805353512392, guid: 19eaeb1a1c883644caa27765e97850c5, type: 3}
-  m_PrefabInstance: {fileID: 6072240462227741525}
+  m_PrefabInstance: {fileID: 5632312956210555344}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8307605469608243751
 PrefabInstance:
