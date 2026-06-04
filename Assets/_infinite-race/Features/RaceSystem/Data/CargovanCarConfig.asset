@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: cargovan_car
   carNameLocalizationKey: cargovan_car_name
-  price: 3000
+  price: 14000
   prefab: {fileID: 2693525807477462494, guid: 83c7d32ccf0015e4b9fe9d9028cd50e8, type: 3}
   baseMaxSpeed: 40
   basePower: 10
@@ -28,4 +28,5 @@ MonoBehaviour:
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 1.05
+  moneyMultiplier: 1

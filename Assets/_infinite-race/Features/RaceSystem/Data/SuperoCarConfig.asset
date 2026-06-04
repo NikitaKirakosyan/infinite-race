@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: supero_car
   carNameLocalizationKey: supero_car_name
-  price: 380000
+  price: 8500000
   prefab: {fileID: 8864631487613623821, guid: 9de4983d624c86248a4fc4bb9e895a4c, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 116
+  basePower: 34
+  baseBrake: 26
+  baseHandling: 9
+  maxMaxSpeed: 135
+  maxPower: 50
+  maxBrake: 58
+  maxHandling: 18
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 2.4
+  moneyMultiplier: 11

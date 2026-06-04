@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: sebaro_car
   carNameLocalizationKey: sebaro_car_name
-  price: 60000
+  price: 750000
   prefab: {fileID: 9208159924915756170, guid: 1d4e2ec7610243c408921d5053c7f43e, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 78
+  basePower: 21
+  baseBrake: 18
+  baseHandling: 7
+  maxMaxSpeed: 100
+  maxPower: 34
+  maxBrake: 42
+  maxHandling: 14
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 1.5
+  moneyMultiplier: 1.75

@@ -29,3 +29,4 @@ MonoBehaviour:
   brakeStep: 2
   handlingStep: 1
   scoreMultiplier: 1
+  moneyMultiplier: 1

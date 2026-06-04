@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.GameModeConfig
   mode: 1
   timeLimit: 60
-  scorePerSecond: 60
-  scorePerDistance: 60
+  scorePerSecond: 20
+  scorePerDistance: 1
+  moneyPerDistance: 0.55
+  moneyPerScore: 0.12
+  baseMoneyReward: 0

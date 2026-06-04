@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: tayoma_car
   carNameLocalizationKey: tayoma_car_name
-  price: 12000
+  price: 80000
   prefab: {fileID: 369756850661539875, guid: fe69c9dd4a4428448ab62b72a8fab030, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 52
+  basePower: 13
+  baseBrake: 14
+  baseHandling: 6
+  maxMaxSpeed: 80
+  maxPower: 24
+  maxBrake: 34
+  maxHandling: 12
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 1.2
+  moneyMultiplier: 1.08

@@ -32,5 +32,6 @@ namespace Southbyte.RaceSystem
         
         [Header("Score")]
         public float scoreMultiplier = 1f;
+        public float moneyMultiplier = 1f;
     }
 }

@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: muscle_car
   carNameLocalizationKey: muscle_car_name
-  price: 30000
+  price: 300000
   prefab: {fileID: 7332037088531801018, guid: 1be46658b3f7eb14382e281b7b6f0585, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 65
+  basePower: 17
+  baseBrake: 16
+  baseHandling: 6.5
+  maxMaxSpeed: 90
+  maxPower: 30
+  maxBrake: 38
+  maxHandling: 13
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 1.35
+  moneyMultiplier: 1.42

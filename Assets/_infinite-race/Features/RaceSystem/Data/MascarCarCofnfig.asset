@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: mascar_car
   carNameLocalizationKey: mascar_car_name
-  price: 100000
+  price: 1500000
   prefab: {fileID: 2021197565276922507, guid: 933b0a9d3ceddfc4ca42734b6e9c3b82, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 90
+  basePower: 25
+  baseBrake: 20
+  baseHandling: 7.5
+  maxMaxSpeed: 110
+  maxPower: 38
+  maxBrake: 46
+  maxHandling: 15
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 1.7
+  moneyMultiplier: 2.75

@@ -8,7 +8,8 @@ namespace Southbyte
     [EarlyInitialization]
     public class CarProgressManager
     {
-        private const float UpgradePriceCarPricePart = 0.1f;
+        private const int MinUpgradeBasePrice = 500;
+        private const float UpgradePriceCarPricePart = 0.014f;
 
 
         public CarProgress Get(string carId)
@@ -88,7 +89,7 @@ namespace Southbyte
 
         public static int GetUpgradePrice(CarConfig config, CarProgress progress, CarStatType type)
         {
-            var basePrice = Mathf.Max(1, Mathf.RoundToInt(config.price * UpgradePriceCarPricePart));
+            var basePrice = Mathf.Max(MinUpgradeBasePrice, Mathf.RoundToInt(config.price * UpgradePriceCarPricePart));
             return basePrice * (GetLevel(progress, type) + 1);
         }
 

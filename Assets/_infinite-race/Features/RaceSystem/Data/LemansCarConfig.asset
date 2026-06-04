@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: lemans_car
   carNameLocalizationKey: lemans_car_name
-  price: 1000000
+  price: 12000000
   prefab: {fileID: 8078678186453278955, guid: 25a34552449143c4591a166a67182933, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 125
+  basePower: 38
+  baseBrake: 30
+  baseHandling: 10
+  maxMaxSpeed: 150
+  maxPower: 55
+  maxBrake: 65
+  maxHandling: 20
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 2.8
+  moneyMultiplier: 12.5

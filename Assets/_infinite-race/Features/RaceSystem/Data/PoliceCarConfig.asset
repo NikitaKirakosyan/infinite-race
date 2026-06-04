@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: police_car
   carNameLocalizationKey: police_car_name
-  price: 300000
+  price: 5200000
   prefab: {fileID: 4648795177379545177, guid: 9122f207b9dfac647adcb64c66cfec58, type: 3}
-  baseMaxSpeed: 40
-  basePower: 10
-  baseBrake: 10
-  baseHandling: 5
-  maxMaxSpeed: 70
-  maxPower: 20
-  maxBrake: 30
-  maxHandling: 10
+  baseMaxSpeed: 108
+  basePower: 30
+  baseBrake: 24
+  baseHandling: 8.5
+  maxMaxSpeed: 125
+  maxPower: 45
+  maxBrake: 54
+  maxHandling: 17
   speedStep: 2
   powerStep: 1.5
   brakeStep: 2
   handlingStep: 1
-  scoreMultiplier: 2
+  scoreMultiplier: 2.1
+  moneyMultiplier: 6.57

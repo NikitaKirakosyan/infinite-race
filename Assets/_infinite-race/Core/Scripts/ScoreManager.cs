@@ -21,7 +21,9 @@ namespace Southbyte
         };
         public CarController player => Object.FindFirstObjectByType<CarController>();
         public float Distance => player ? player.transform.position.z : 0;
-        public int Score => Mathf.FloorToInt(Distance * _scoreMultiplier) + Mathf.FloorToInt(_score * _scoreMultiplier);
+        public float MoneyMultiplier => player ? player.config.moneyMultiplier : 1f;
+        public int Score => Mathf.FloorToInt(Distance * _gameManager.ScorePerDistance * _scoreMultiplier) +
+                            Mathf.FloorToInt(_score * _scoreMultiplier);
         
         
         public override async Task StartInitializationAsync()

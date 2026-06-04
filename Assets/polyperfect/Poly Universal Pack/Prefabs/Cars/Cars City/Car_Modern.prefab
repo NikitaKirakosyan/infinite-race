@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4471082705029804881}
   - component: {fileID: 2408560659404261080}
   - component: {fileID: 2614002122343869318}
-  - component: {fileID: 1566297317640188645}
   m_Layer: 0
   m_Name: car-modern-wheel-rfr
   m_TagString: Untagged
@@ -91,28 +90,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297317640188645
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343887652997469866}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1287836207666279578, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &1239609102714475128
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +101,6 @@ GameObject:
   - component: {fileID: 5113504100197965725}
   - component: {fileID: 5842424284971384744}
   - component: {fileID: 8295958360792920869}
-  - component: {fileID: 1566297319214370614}
   m_Layer: 0
   m_Name: car-modern-door-lfa
   m_TagString: Untagged
@@ -205,28 +181,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297319214370614
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239609102714475128}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7617106553495685103, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &1836891185728614936
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +191,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1312274143627323554}
   - component: {fileID: -2764209259735946192}
+  - component: {fileID: -5966385728808371717}
+  - component: {fileID: -3535552643098990911}
   m_Layer: 0
   m_Name: Car_Modern
   m_TagString: Player
@@ -268,6 +224,8 @@ Transform:
   - {fileID: 6283106666972350611}
   - {fileID: 4471082705029804881}
   - {fileID: 6874525833895771972}
+  - {fileID: 9035292527879694029}
+  - {fileID: 889139330336823632}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &-2764209259735946192
@@ -289,8 +247,61 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1, z: 3}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1.6003482, y: 1, z: 4.480191}
+  m_Center: {x: 0.02220285, y: 1, z: 0.2516327}
+--- !u!54 &-5966385728808371717
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836891185728614936}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-3535552643098990911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836891185728614936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1172467c403142898a7053b81a0abe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarController
+  _laneLimit: 4
+  _headlights: {fileID: 8528304074394739220}
+  _frontLeftWheel: {fileID: 5692454224705856345}
+  _frontRightWheel: {fileID: 4471082705029804881}
+  _rearLeftWheel: {fileID: 9061100059514894932}
+  _rearRightWheel: {fileID: 6283106666972350611}
+  _wheelRotateSpeed: 360
+  _maxSteerAngle: 30
+  _steerReturnSpeed: 8
+  steerResponsiveness: 6
+  yawStability: 12
+  maxBodyRoll: 12
+  rollSpeed: 6
+  config: {fileID: 11400000, guid: e333105cc9a30478cad56e2b304cc9be, type: 2}
 --- !u!1 &2518588688964855579
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +313,6 @@ GameObject:
   - component: {fileID: 4614940982507918138}
   - component: {fileID: 4735086923291265779}
   - component: {fileID: 5179690406637485269}
-  - component: {fileID: 1566297319214370615}
   m_Layer: 0
   m_Name: car-modern-door-rba
   m_TagString: Untagged
@@ -383,28 +393,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297319214370615
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2518588688964855579}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4387279079707864913, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &2639559706733619629
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +404,6 @@ GameObject:
   - component: {fileID: 2205715400115381746}
   - component: {fileID: 8709614202240347619}
   - component: {fileID: 2436140066654960410}
-  - component: {fileID: 1566297319214370612}
   m_Layer: 0
   m_Name: car-modern-door_lfr
   m_TagString: Untagged
@@ -497,28 +484,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297319214370612
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639559706733619629}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -889099485036152848, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &2654806493589137375
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +495,6 @@ GameObject:
   - component: {fileID: 6874525833895771972}
   - component: {fileID: 1854223044364869262}
   - component: {fileID: 9074473538404086510}
-  - component: {fileID: 1566297317503773337}
   m_Layer: 0
   m_Name: car-modern_trunk
   m_TagString: Untagged
@@ -611,13 +575,47 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297317503773337
-MeshCollider:
+--- !u!1 &3597931703004660653
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2654806493589137375}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889139330336823632}
+  - component: {fileID: 6231927350645430625}
+  - component: {fileID: 8895541650451042983}
+  - component: {fileID: 3142644705025423030}
+  m_Layer: 0
+  m_Name: CloseMissDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889139330336823632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597931703004660653}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1312274143627323554}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6231927350645430625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597931703004660653}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -626,13 +624,51 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.5, y: 1, z: 6}
+  m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!54 &8895541650451042983
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597931703004660653}
   serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 365369582756411095, guid: a81987d89453f94478f45139d6a1b224, type: 3}
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3142644705025423030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597931703004660653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7f90e3c07149379bd4f079c1cf37e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CloseMissDetector
 --- !u!1 &5333643523205546060
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +680,6 @@ GameObject:
   - component: {fileID: 6283106666972350611}
   - component: {fileID: 7636810714283124350}
   - component: {fileID: 3699708021189864170}
-  - component: {fileID: 1566297318000065437}
   m_Layer: 0
   m_Name: car-modern-wheel-rba
   m_TagString: Untagged
@@ -724,28 +759,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297318000065437
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5333643523205546060}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8433369496538753000, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &6363394361432422040
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +770,6 @@ GameObject:
   - component: {fileID: 5177076670332041337}
   - component: {fileID: 3960468524320977856}
   - component: {fileID: 7585351106283871648}
-  - component: {fileID: 1566297319214370617}
   m_Layer: 0
   m_Name: car-modern-door-lba
   m_TagString: Untagged
@@ -838,28 +850,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297319214370617
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363394361432422040}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1760035274253490990, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &6964504752038975005
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +861,6 @@ GameObject:
   - component: {fileID: 9061100059514894932}
   - component: {fileID: 3319408240106002839}
   - component: {fileID: 1229778645053379453}
-  - component: {fileID: 1566297317181893196}
   m_Layer: 0
   m_Name: car-modern-wheel-lba
   m_TagString: Untagged
@@ -951,28 +940,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297317181893196
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6964504752038975005}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1414593246375927396, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &7302991895795531929
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +951,6 @@ GameObject:
   - component: {fileID: 5692454224705856345}
   - component: {fileID: 879173802720201023}
   - component: {fileID: 6582489950668893861}
-  - component: {fileID: 1566297318458479563}
   m_Layer: 0
   m_Name: car-modern-wheel-lfr
   m_TagString: Untagged
@@ -1064,28 +1030,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297318458479563
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7302991895795531929}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8032518117184293870, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &7355088950643768515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1041,6 @@ GameObject:
   - component: {fileID: 8162603426078970049}
   - component: {fileID: 6485573968249668303}
   - component: {fileID: 2042763813193191970}
-  - component: {fileID: 1566297319214370616}
   m_Layer: 0
   m_Name: car-modern-base
   m_TagString: Untagged
@@ -1180,28 +1123,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297319214370616
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7355088950643768515}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3536617594127878461, guid: a81987d89453f94478f45139d6a1b224, type: 3}
 --- !u!1 &7899056794475260987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1134,6 @@ GameObject:
   - component: {fileID: 6094194934675676538}
   - component: {fileID: 8135705110800963280}
   - component: {fileID: 412308474864159684}
-  - component: {fileID: 1566297318534153036}
   m_Layer: 0
   m_Name: car-modern-steering-wheel
   m_TagString: Untagged
@@ -1293,25 +1213,132 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1566297318534153036
-MeshCollider:
+--- !u!1 &8528304074394739220
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7899056794475260987}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9035292527879694029}
+  m_Layer: 0
+  m_Name: Headlights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9035292527879694029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528304074394739220}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.65, y: 0, z: 0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8131836059113087447}
+  m_Father: {fileID: 1312274143627323554}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8935267263056953258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8131836059113087447}
+  - component: {fileID: 4957325322622554305}
+  m_Layer: 0
+  m_Name: Spot Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8131836059113087447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935267263056953258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.65, y: 0.753, z: 2.325}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9035292527879694029}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &4957325322622554305
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935267263056953258}
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -9163253070858788185, guid: a81987d89453f94478f45139d6a1b224, type: 3}
+  serializedVersion: 12
+  m_Type: 0
+  m_Color: {r: 1, g: 0.95977277, b: 0.7028302, a: 1}
+  m_Intensity: 1.5
+  m_Range: 60
+  m_SpotAngle: 90
+  m_InnerSpotAngle: 1
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1

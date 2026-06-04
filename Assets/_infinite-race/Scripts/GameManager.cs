@@ -49,6 +49,7 @@ namespace Southbyte
             }
         }
         public GameMode CurrentMode => currentMode;
+        public float ScorePerDistance => modeConfig ? modeConfig.scorePerDistance : 1f;
         
         
         protected override List<Task> DependentServices => new List<Task>()
@@ -128,7 +129,7 @@ namespace Southbyte
             if(_scoreManager.Distance > YG2.saves.bestDistance)
                 YG2.saves.bestDistance = _scoreManager.Distance;
             
-            var money = Mathf.RoundToInt(_scoreManager.Distance * 2);
+            var money = CalculateMoneyReward();
             
             var endScreen = _screenManager.Open<EndScreen>(ScreenIds.EndScreen);
             endScreen.Setup(_scoreManager.Score, _scoreManager.Distance, money, YG2.saves.bestScore, YG2.saves.bestDistance);
@@ -214,6 +215,17 @@ namespace Southbyte
                 _scoreManager.AddScore(modeConfig.scorePerSecond);
                 _passedSeconds = 0;
             }
+        }
+
+        private int CalculateMoneyReward()
+        {
+            if(!modeConfig)
+                return 0;
+
+            var distanceReward = _scoreManager.Distance * modeConfig.moneyPerDistance;
+            var scoreReward = _scoreManager.Score * modeConfig.moneyPerScore;
+            var reward = (modeConfig.baseMoneyReward + distanceReward + scoreReward) * _scoreManager.MoneyMultiplier;
+            return Mathf.Max(0, Mathf.RoundToInt(reward));
         }
     }
 }

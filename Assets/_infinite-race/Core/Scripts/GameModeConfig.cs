@@ -14,7 +14,12 @@ namespace Southbyte
         
         [Header("Scoring")]
         public int scorePerSecond = 1;
-        public float scorePerDistance = 0.1f;
+        public float scorePerDistance = 1f;
+
+        [Header("Rewards")]
+        public float moneyPerDistance = 0.55f;
+        public float moneyPerScore = 0.12f;
+        public int baseMoneyReward;
         
         
         public static GameModeConfig GetConfig(GameMode mode)
