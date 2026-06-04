@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: pickup_car
   carNameLocalizationKey: pickup_car_name
-  price: 1000
+  price: 0
   prefab: {fileID: 8018424140572277383, guid: 88c873a865ebab3459fe926b71eab9b1, type: 3}
   baseMaxSpeed: 20
   basePower: 10

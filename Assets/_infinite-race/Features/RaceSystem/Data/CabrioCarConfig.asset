@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
   carId: cabrio_car
   carNameLocalizationKey: cabrio_car_name
-  price: 5000
+  price: 250000
   prefab: {fileID: 7654369706139800605, guid: 739dce61952b5624d9b547ee31f850f7, type: 3}
   baseMaxSpeed: 90
   basePower: 30

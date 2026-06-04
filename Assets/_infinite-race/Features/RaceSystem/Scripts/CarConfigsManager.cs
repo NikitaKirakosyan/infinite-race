@@ -31,7 +31,9 @@ namespace Southbyte.RaceSystem
                 return;
             }
             
-            CarConfigs = _handle.Result.ToList();
+            CarConfigs = _handle.Result
+                .OrderBy(carConfig => carConfig.price)
+                .ToList();
             TrySetInitializationResult(true);
         }
     }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34608c3b85df4e2c8dae17f9032734c, type: 3}
-  m_Name: PoliceCarConfig
+  m_Name: MascarCarCofnfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
-  carId: police_car
-  carNameLocalizationKey: police_car_name
-  price: 300000
-  prefab: {fileID: 4648795177379545177, guid: 9122f207b9dfac647adcb64c66cfec58, type: 3}
+  carId: mascar_car
+  carNameLocalizationKey: mascar_car_name
+  price: 100000
+  prefab: {fileID: 2021197565276922507, guid: 933b0a9d3ceddfc4ca42734b6e9c3b82, type: 3}
   baseMaxSpeed: 40
   basePower: 10
   baseBrake: 10

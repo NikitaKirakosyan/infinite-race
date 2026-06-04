@@ -36,7 +36,14 @@
       "close_miss_caps": "CLOSE MISS!\nBONUS SCORE +${num}",
       "continue_caps": "CONTINUE",
       "restart_caps": "RESTART",
-      "pause_caps": "PAUSE"
+      "pause_caps": "PAUSE",
+      "cargovan_car_name": "Cargovan",
+      "lemans_car_name": "Lemans",
+      "mascar_car_name": "Mascar",
+      "muscle_car_name": "Muscle",
+      "sebaro_car_name": "Sebaro",
+      "supero_car_name": "Supero",
+      "tayoma_car_name": "Tayoma"
     },
     "ru": {
       "loading_label": "Загрузка...",
@@ -74,7 +81,14 @@
       "close_miss_caps": "БЛИЗКО!\nБОНУС СЧЕТ +${num}",
       "continue_caps": "ПРОДОЛЖИТЬ",
       "restart_caps": "ЗАНОВО",
-      "pause_caps": "ПАУЗА"
+      "pause_caps": "ПАУЗА",
+      "cargovan_car_name": "Фургон",
+      "lemans_car_name": "Леманс",
+      "mascar_car_name": "Маскар",
+      "muscle_car_name": "Мускл",
+      "sebaro_car_name": "Себаро",
+      "supero_car_name": "Суперо",
+      "tayoma_car_name": "Тайома"
     }
   }
 }

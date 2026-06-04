@@ -181,5 +181,40 @@ namespace Southbyte.LocalizationSystem
 		/// PAUSE
 		/// </summary>
 		public const string PauseCaps = "pause_caps";
+
+		/// <summary>
+		/// Cargovan
+		/// </summary>
+		public const string CargovanCarName = "cargovan_car_name";
+
+		/// <summary>
+		/// Lemans
+		/// </summary>
+		public const string LemansCarName = "lemans_car_name";
+
+		/// <summary>
+		/// Mascar
+		/// </summary>
+		public const string MascarCarName = "mascar_car_name";
+
+		/// <summary>
+		/// Muscle
+		/// </summary>
+		public const string MuscleCarName = "muscle_car_name";
+
+		/// <summary>
+		/// Sebaro
+		/// </summary>
+		public const string SebaroCarName = "sebaro_car_name";
+
+		/// <summary>
+		/// Supero
+		/// </summary>
+		public const string SuperoCarName = "supero_car_name";
+
+		/// <summary>
+		/// Tayoma
+		/// </summary>
+		public const string TayomaCarName = "tayoma_car_name";
 	}
 }

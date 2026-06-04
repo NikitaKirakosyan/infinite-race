@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34608c3b85df4e2c8dae17f9032734c, type: 3}
-  m_Name: PoliceCarConfig
+  m_Name: TayomaCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
-  carId: police_car
-  carNameLocalizationKey: police_car_name
-  price: 300000
-  prefab: {fileID: 4648795177379545177, guid: 9122f207b9dfac647adcb64c66cfec58, type: 3}
+  carId: tayoma_car
+  carNameLocalizationKey: tayoma_car_name
+  price: 12000
+  prefab: {fileID: 369756850661539875, guid: fe69c9dd4a4428448ab62b72a8fab030, type: 3}
   baseMaxSpeed: 40
   basePower: 10
   baseBrake: 10

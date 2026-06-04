@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34608c3b85df4e2c8dae17f9032734c, type: 3}
-  m_Name: PoliceCarConfig
+  m_Name: LemansCarConfig
   m_EditorClassIdentifier: Assembly-CSharp::Southbyte.RaceSystem.CarConfig
-  carId: police_car
-  carNameLocalizationKey: police_car_name
-  price: 300000
-  prefab: {fileID: 4648795177379545177, guid: 9122f207b9dfac647adcb64c66cfec58, type: 3}
+  carId: lemans_car
+  carNameLocalizationKey: lemans_car_name
+  price: 1000000
+  prefab: {fileID: 8078678186453278955, guid: 25a34552449143c4591a166a67182933, type: 3}
   baseMaxSpeed: 40
   basePower: 10
   baseBrake: 10
