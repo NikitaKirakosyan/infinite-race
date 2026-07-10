@@ -39,7 +39,7 @@ namespace Southbyte
             RenderSettings.ambientLight = nightAmbient;
             
             RenderSettings.reflectionIntensity = 0f;
-            RenderSettings.customReflection = null;
+            RenderSettings.customReflectionTexture = null;
             
             directionalLight.intensity = 0.05f;
             directionalLight.color = nightAmbient;

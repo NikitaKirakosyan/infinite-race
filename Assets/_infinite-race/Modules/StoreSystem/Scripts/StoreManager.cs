@@ -13,7 +13,7 @@ using Zenject;
 namespace Southbyte.StoreSystem
 {
     [EarlyInitialization]
-    public class StoreManager : AsyncInitializationServiceBase
+    public class StoreManager
     {
         private const string StoreItemResourcesAddressablesPath = "StoreItemResources";
         
@@ -25,11 +25,6 @@ namespace Southbyte.StoreSystem
         
         private StoreItemResources _storeItemResources;
         private AsyncOperationHandle<StoreItemResources> _handle;
-        
-        protected override List<Task> DependentServices => new ()
-        {
-            _yg2Provider.InitializationTask,
-        };
         
         public List<string> PurchasedStoreItemIds
         {
@@ -54,14 +49,6 @@ namespace Southbyte.StoreSystem
         }
         
         
-        public override async Task StartInitializationAsync()
-        {
-            await base.StartInitializationAsync();
-            await InitAsync();
-            await InitializationTask;
-        }
-        
-        
         public bool TryGetStoreItemData(string purchaseId, out StoreItemData storeItemData)
         {
             return _storeItemResources.TryGetStoreItemData(purchaseId, out storeItemData);
@@ -81,7 +68,7 @@ namespace Southbyte.StoreSystem
         }
         
         
-        private async Task InitAsync()
+        public async Task InitAsync()
         {
             _handle = Addressables.LoadAssetAsync<StoreItemResources>(StoreItemResourcesAddressablesPath);
             _handle.Completed += OnStoreItemResourcesLoaded;
@@ -92,7 +79,6 @@ namespace Southbyte.StoreSystem
             YG2.onPurchaseFailed += OnPurchaseFailedCallback;
             
             YG2.ConsumePurchases();
-            TrySetInitializationResult(true);
         }
         
         private void OnPurchaseSuccessCallback(string purchaseId)

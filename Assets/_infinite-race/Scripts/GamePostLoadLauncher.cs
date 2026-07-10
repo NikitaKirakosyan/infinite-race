@@ -13,7 +13,7 @@ namespace Southbyte
         {
             gameManager.InitAfterLoad(screenManager);
             screenManager.Open<MainScreen>(ScreenIds.MainScreen);
-            Object.FindFirstObjectByType<HUDController>(FindObjectsInactive.Include).Init(diContainer);
+            Object.FindAnyObjectByType<HUDController>(FindObjectsInactive.Include).Init(diContainer);
         }
     }
 }

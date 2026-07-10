@@ -141,7 +141,7 @@ namespace Southbyte
         
         public void Restart()
         {
-            Object.FindFirstObjectByType<CarSpawner>().transform.position = Vector3.zero;
+            Object.FindAnyObjectByType<CarSpawner>().transform.position = Vector3.zero;
             
             Time.timeScale = 1;
             IsPlaying = true;

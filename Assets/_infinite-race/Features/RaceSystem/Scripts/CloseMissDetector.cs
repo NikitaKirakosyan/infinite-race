@@ -20,7 +20,7 @@ namespace Southbyte.RaceSystem
             if (d <= MissDistance)
             {
                 _scoreManager.AddScore(MissScore);
-                FindFirstObjectByType<CloseMissBonusText>().Show(MissScore);
+                FindAnyObjectByType<CloseMissBonusText>().Show(MissScore);
             }
         }
     }

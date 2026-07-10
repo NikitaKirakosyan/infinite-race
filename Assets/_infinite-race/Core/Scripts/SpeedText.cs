@@ -28,7 +28,7 @@ namespace Southbyte
         private void LateUpdate()
         {
             if(_gameManager.IsPlaying && _carController == null)
-                _carController = FindFirstObjectByType<CarController>();
+                _carController = FindAnyObjectByType<CarController>();
             
             if(_carController)
             {

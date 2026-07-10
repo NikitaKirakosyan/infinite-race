@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using NKLogger;
 using Southbyte.DIConfiguration;
 using Southbyte.StoreSystem;
@@ -10,37 +9,34 @@ using Zenject;
 
 namespace Southbyte.AdsSystem
 {
-    [EarlyInitialization]
-    public class AdsManager : AsyncInitializationServiceBase
+    [RegularInitialization]
+    public class AdsManager : IInitializable
     {
         public event Action OnInterstitialAdClosed;
         public event Action OnRewardedVideoAdClosed;
         
-        [Inject] private StoreManager _storeManager;
+        [Inject] private DiContainer _diContainer;
         
         private bool _isInitialized;
         private InterstitialAdManager _interstitialAdManager;
         private RewardedVideoAdManager _rewardedVideoAdManager;
         private AdsConfig _adsConfig;
+        private StoreManager _storeManager;
         private readonly Dictionary<string, (float lastViewedTime, int showAttempts)> _adItems = new ();
-        
-        protected override List<Task> DependentServices => new ()
-        {
-            _storeManager.InitializationTask,
-        };
         
         public bool IsAdShowingAllowed { get; private set; } = true;
         
         
         ~AdsManager()
         {
-            _storeManager.OnPurchaseSuccess -= OnPurchaseSuccessCallback;
+            if(_storeManager != null)
+                _storeManager.OnPurchaseSuccess -= OnPurchaseSuccessCallback;
         }
         
         
-        public override async Task StartInitializationAsync()
+        void IInitializable.Initialize()
         {
-            await base.StartInitializationAsync();
+            _storeManager = _diContainer.Resolve<StoreManager>();
             Init();
         }
         
@@ -69,8 +65,6 @@ namespace Southbyte.AdsSystem
             _rewardedVideoAdManager = new RewardedVideoAdManager();
             _rewardedVideoAdManager.Init();
             _rewardedVideoAdManager.OnRewardedVideoAdClosed += HandleRewardedVideoAdClosed;
-            
-            TrySetInitializationResult(true);
         }
 
         public void ShowInterstitialAd(string placementId = null)

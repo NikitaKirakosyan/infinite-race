@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using NKLogger;
 using Southbyte.ScreensSystem;
+using Southbyte.StoreSystem;
+using Southbyte.YG2System;
 using UnityEngine;
 using Zenject;
 
@@ -18,6 +20,7 @@ namespace Southbyte.DIConfiguration
         public event Action OnServicesInitializationCompleted;
         
         private EarlyScreenManager _earlyScreenManager;
+        private StoreManager _storeManager;
         
 #if !PROD
         private readonly Stopwatch _stopwatch = new ();
@@ -28,9 +31,10 @@ namespace Southbyte.DIConfiguration
 #endif
         
         [Inject]
-        public async void Initialize(ManagersFacade.Factory factory, List<IAsyncInitializationService> asyncServices, EarlyScreenManager earlyScreenManager)
+        public async void Initialize(ManagersFacade.Factory factory, List<IAsyncInitializationService> asyncServices, EarlyScreenManager earlyScreenManager, StoreManager storeManager)
         {
             _earlyScreenManager = earlyScreenManager;
+            _storeManager = storeManager;
             
             try
             {
@@ -48,6 +52,11 @@ namespace Southbyte.DIConfiguration
                 UpdateLoadingScreenProgress(tasks);
                 
                 await Task.WhenAll(tasks);
+                
+                var yg2Provider = new YG2Provider();
+                await yg2Provider.Init();
+                
+                await _storeManager.InitAsync();
                 
                 factory.Create();
 #if !PROD

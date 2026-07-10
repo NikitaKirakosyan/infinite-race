@@ -19,7 +19,7 @@ namespace Southbyte
         {
             _gameManager.InitializationTask,
         };
-        public CarController player => Object.FindFirstObjectByType<CarController>();
+        public CarController player => Object.FindAnyObjectByType<CarController>();
         public float Distance => player ? player.transform.position.z : 0;
         public float MoneyMultiplier => player ? player.config.moneyMultiplier : 1f;
         public int Score => Mathf.FloorToInt(Distance * _gameManager.ScorePerDistance * _scoreMultiplier) +
